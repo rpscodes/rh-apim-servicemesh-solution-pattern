@@ -4,19 +4,45 @@
 :sectlinks:
 :doctype: book
 
-A brief introduction of this solution pattern.
+API-centric and microservices-based IT architectures improve speed, agility, and efficiency. Consistent, effective management of these interfaces and services is critical for successful deployment and use. Most organizations look for either an API management or a service mesh solution to accomplish this. Determining which approaches and tools to use within your organization can be confusing. However these two technologies are actually complementary and can be used together to deliver a complete service management architecture. 
+
+This solution pattern helps you understand and setup a comprehensive service management architecture using both solutions together.
+
+:sectnums:
+
 
 include::content-overview.adoc[]
 
 [#use-cases]
 == Use cases
 
+
+.A quick refresher
+[cols="1,1"]
+|===
+| API Management | Service Mesh
+
+| (a) manages relationship between service (API) providers and service consumers 
+
+(b) securely exposes  services to external clients or other Business Unit within the same enterprise (also called _North-South_ or Inter Domain)
+
+(c) ideal for teams that want to deliver services beyond their domain to other internal groups or external users.
+
+
+|  (a) delivers advanced traffic control, security, resilience and observability for cloud-native apps
+
+(b) enables the standardization across the service interactions  (also called _East-West_ or Intra domain)
+
+(c) ideal for development teams that need to access services through network interfaces and protocols.
+|===
+
 Common use cases that can be address with this architecture are:
 
-- xyz
-- xyz
+* Drive application modernization by managing legacy applications and microservices. Service mesh provides service-service communication while API management provides secured access to other teams and external partners.
+* Allow increased observability and tracing across the services, standardize the security across services so that dev teams can manage  microservices more easily
+* Formalizing inter-service communication in large corporate networks with api contracts
+* Provide access to external partners, clients and developers who want to build value added services on top of existing offering. Build a self sign up workflow o obtain credentials, add usage limits to the API based on the business contract and monitor the usage by the external clients.
+* Enable secure access to apps outside the service mesh
+* Intelligent traffic routing to the services and APIs based on the application accessing them
 
 include::01-pattern.adoc[]
-
-== Explore more solution patterns
-include::https://raw.githubusercontent.com/redhat-solution-patterns/redhat-solution-patterns.github.io/master/documentation/modules/ROOT/pages/solution-pattern-list.adoc[]

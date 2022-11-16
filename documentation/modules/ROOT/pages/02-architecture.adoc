@@ -5,29 +5,67 @@
 
 = Architecture 
 
-Introduction for the architecture of this solution pattern.
+The architecture will need to support these paradigms
+
+* Control and monitor services-services traffic within the organization boundaries
+* Support the ability to run microservices securely on zero-trust networks
+* Distributed tracing to troubleshoot and isolate bottlenecks in end-to-end request paths
+* Secure service-service communication from other internal teams such as other BUs or LOBs
+* Secure access to services from external clients and partner portals
+
 
 == Common Challenges 
+
+The new requirements include +
+(a) managing Intra Domain or East-West communication +
+(b) sharing APIs securely with external clients, there could a few challenges that can impact timely delivery.
+
+The team would like to adopt an approach which would enable
+
+* ease of deployment, setup and maintenance of application infrastructure
+* less or no impact to existing services so as to limit time, efforts and risk
+* comprehensive application security 
+* monitoring usage with a possibility to monetize
+* allow external clients to be able to sign up to the services through self-service
+
 
 [#tech_stack]
 == Technology Stack
 
-// Change links and text here as you see fit.
-* https://www.redhat.com/en/technologies/cloud-computing/openshift[Red Hat OpenShift]
-* Red Hat Application Foundation
-** https://access.redhat.com/products/quarkus[Quarkus]
-** https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-streams-for-apache-kafka[Kafka Streams]
-* Other:
-** https://www.postgresql.org/[PostgreSQL database]
-** https://helm.sh/[Helm]
+*  https://developers.redhat.com/products/openshift/overview[Red Hat OpenShift^]
+* https://www.redhat.com/en/technologies/cloud-computing/openshift/what-is-openshift-service-mesh[Red Hat OpenShift Service Mesh^]
+* https://developers.redhat.com/products/3scale/overview[Red Hat 3scale API Management^]
 
 
 [#in_depth]
 == An in-depth look at the solution's architecture
 
-Technical description including all or some of the following: architecture ir ed diagrams. In-depth details of the decisions made and solutions used. Description of each service and what it is used for. Description of any integration.
+
+* Internal systems speak with each other within private context - within a secure environment
+* Not all microservices need to be exposed as APIs. 
+* External facing Composite services are composed of a collaborative set of atomic microservices. These external Composite services are the ones which will need to be exposed as an external API
+* The atomic services are RESTful APIs in nature but will not have to be an API endpoint that needs to be exposed.  The interaction between the Atomic services and with the external facing Composite services is controlled by a Service Mesh.
+By doing this, the number of APIs that are actually exposed on the API gateway is limited. All the internal interactions are within a service and there is no need to go via the API gateway to invoke the atomic services
+* The composite service which is exposed as an API endpoint on 3scale which is the entry to the serivce mesh which manages the RESTful atomic services in the southside of the gateway. The North side of this services  is defined in 3Scale as an API end point with an OpenAPI specification.  And that is how this enstire service is exposed to the external world. 
+
+These Composite service is typically simple in nature which would lean upon the atomic services to do the heavy lifting and then mash up the responses from those atomic services to provide the API endpoint. All of these services are defined by an OpenAPI Specification for a Contract First approach. 
+
+
+//image::2022-11-15T06-05%3A38-336Z.png[] 
+
+//image::2022-11-15T06-24%3A08-192Z.png[] 
 
 [#more_tech]
 == About the Technology Stack
 
 If you want to include more details about the tech stack you used, this is the place.
+
+== Red Hat OpenShift Service Mesh
+* connect services securely by default with transparent TLS encryption
+* enforce a "zero trust" or "need to know" with fine-grained traffic policies based on application identities
+* control traffic flow with effective traffic management, which makes the applications more resilient
+* use service metrics to monitor application health, reliability, and performance
+
+The service mesh  
+
+== Deploy Red Hat API Management and OpenShift Service Mesh  together
