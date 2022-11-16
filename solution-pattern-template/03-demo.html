@@ -73,13 +73,10 @@
     <a class="nav-link" href="01-pattern.html#_the_story_behind_this_solution_pattern">1.2 The story behind this solution pattern</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="01-pattern.html#_the_solution">1.3 The solution</a>
+    <a class="nav-link" href="index.html#_content_overview">1.3 Content Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#_content_overview">1.4 Content Overview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#_content_overview">1.5 Explore more solution patterns</a>
+    <a class="nav-link" href="01-pattern.html#_the_solution">1.4 The solution</a>
   </li>
 </ul>
   </li>
@@ -131,7 +128,7 @@
     <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <span class="nav-text">xref:04-workshop.adoc#_before_getting_started[4.2. Pre-requisites</span>
+    <a class="nav-link" href="04-workshop.html#_before_getting_started">4.2. Pre-requisites</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="04-workshop.html#install_wksp_details">4.3. Installing the environment</a>
@@ -180,66 +177,1003 @@
     <li><a href="03-demo.html">3. See the Solution in Action</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/jayachristina/apim-osm-sp/edit/main/documentation/modules/ROOT/pages/03-demo.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/jayachristina/rh-apim-servicemesh-solution-pattern/edit/main/documentation/modules/ROOT/pages/03-demo.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
 <h1 class="page">Solution Pattern: Name Template</h1>
 <h1 id="_see_the_solution_in_action" class="sect0"><a class="anchor" href="#_see_the_solution_in_action"></a><a class="link" href="#_see_the_solution_in_action">See the Solution in Action</a></h1>
+<div class="openblock partintro">
+<div class="content">
+Here you find a recorded video of the solution pattern, as well as a walkthrough guide through the different aspects of the solution pattern.
+</div>
+</div>
 <div class="sect1">
-<h2 id="_demonstration"><a class="anchor" href="#_demonstration"></a><a class="link" href="#_demonstration">1. Demonstration</a></h2>
+<h2 id="_recorded_video"><a class="anchor" href="#_recorded_video"></a><a class="link" href="#_recorded_video">1. Recorded Video</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Include here content related to potential existing demos: blogs, articles, recorded videos, walkthrough guides, tutorials.</p>
 </div>
-<div class="sect2">
-<h3 id="demo-video"><a class="anchor" href="#demo-video"></a><a class="link" href="#demo-video">1.1. Watch a demonstration</a></h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="demo-video"><a class="anchor" href="#demo-video"></a><a class="link" href="#demo-video">2. Watch a demonstration</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>In this video you can see xpto:</p>
-</div>
-<div class="videoblock">
-<div class="content">
-<iframe width="800" height="480" src="https://www.youtube.com/embed/3yULVMdqJ98?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
+<p><a href="#placeholder">[placeholder]</a></p>
 </div>
 <div class="paragraph">
 <p>Next, you can learn how to walkthrough this demo.</p>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="_run_the_demonstration"><a class="anchor" href="#_run_the_demonstration"></a><a class="link" href="#_run_the_demonstration">2. Run the demonstration</a></h2>
+<h2 id="_walkthrough_guide"><a class="anchor" href="#_walkthrough_guide"></a><a class="link" href="#_walkthrough_guide">3. Walkthrough Guide</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_before_getting_started"><a class="anchor" href="#_before_getting_started"></a><a class="link" href="#_before_getting_started">2.1. Before getting started</a></h3>
 <div class="paragraph">
-<p>To run this demo, you will need xpto. Adding to that, make sure to have:</p>
+<p>These are the steps to provision the demo</p>
+</div>
+<div class="sect2">
+<h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a><a class="link" href="#_prerequisites">3.1. Prerequisites</a></h3>
+<div class="paragraph">
+<p>You will need the following prerequisites:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>ABC</p>
+<p>Access to an OpenShift environment, preferably with cluster-admin privileges.</p>
 </li>
 <li>
-<p>XYZ</p>
+<p>OpenShift CLI</p>
 </li>
 <li>
-<p>XPTO</p>
+<p>Ansible Installed on your local machine</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Follow this <a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html" target="_blank" rel="noopener">guide</a> to install Ansible if you haven&#8217;t already done so</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Set up SSH connections so Ansible can connect to the managed nodes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add your public SSH key to the authorized_keys file on the remote system.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You can follow this <a href="https://jacobtomlinson.dev/posts/2013/ssh-without-a-password-on-os-x-with-ssh-copy-id/" target="_blank" rel="noopener">link</a> to set up the keys and SSH connections on a Mac</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Test the SSH connection. After setting up the keys you should be able to SSH to the remote machine where OpenShift is installed without needing a password.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Test the SSH connections, for example:</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_the_demo_environment"><a class="anchor" href="#_setting_up_the_demo_environment"></a><a class="link" href="#_setting_up_the_demo_environment">3.2. Setting up the demo environment</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Download this repo into your local machine (on any machine where you&#8217;ve installed ansible)
+<a href="https://github.com/redhat-servicemesh-apim-demo/3scale-OSSM-TravelDemo-Playbooks" class="bare">https://github.com/redhat-servicemesh-apim-demo/3scale-OSSM-TravelDemo-Playbooks</a></p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone <a href="https://github.com/redhat-servicemesh-apim-demo/3scale-OSSM-TravelDemo-Playbooks" class="bare">https://github.com/redhat-servicemesh-apim-demo/3scale-OSSM-TravelDemo-Playbooks</a></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>On your terminal, navigate to folder <code>3scale-OSSM-TravelDemo-Playbooks/ansible</code></p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd 3scale-OSSM-TravelDemo-Playbooks/ansible</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set the following environment variables. Copy paste the below on your terminal</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">TARGET_HOST="Replace with the ssh username of your remote machine"
+OCP_USERNAME="Replace with OpenShift Admin username"
+WORKLOAD="ocp4-workload-3scale-servicemesh-demo"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">TARGET_HOST="<a href="mailto:lab-user@bastion.zvbw7.sandbox5.opentlc.com">lab-user@bastion.zvbw7.sandbox5.opentlc.com</a>"
+OCP_USERNAME="kubeadmin"
+WORKLOAD="ocp4-workload-3scale-servicemesh-demo"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the below playbook using the below command and wait until the playbook finishes running</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ansible-playbook -i ${TARGET_HOST}, ./configs/ocp-workloads/ocp-workload.yml \
+                -e"ansible_ssh_private_key_file=~/.ssh/id_rsa" \
+                   -e"ocp_username=${OCP_USERNAME}" \
+                   -e"ocp_workload=${WORKLOAD}" \
+                   -e"ACTION=create"</code></pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_installing_the_demo"><a class="anchor" href="#_installing_the_demo"></a><a class="link" href="#_installing_the_demo">2.2. Installing the demo</a></h3>
-<div class="paragraph">
-<p>Installation guide and basic test of the demo installation if needed</p>
+<h3 id="_walkthrough_guide_2"><a class="anchor" href="#_walkthrough_guide_2"></a><a class="link" href="#_walkthrough_guide_2">3.3. Walkthrough guide</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The Ansible playbook has provisioned the following components and configurations for you:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Travelz application</p>
+</li>
+<li>
+<p>OpenShift Service Mesh configured to connect, manage, and observe Travelz microservices</p>
+</li>
+<li>
+<p>3Scale API Management</p>
+</li>
+<li>
+<p>Partner Booking Apps</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_walkthrough_guide"><a class="anchor" href="#_walkthrough_guide"></a><a class="link" href="#_walkthrough_guide">2.3. Walkthrough guide</a></h3>
+<h3 id="_guide_setup"><a class="anchor" href="#_guide_setup"></a><a class="link" href="#_guide_setup">3.4. Guide Setup</a></h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>How to run through the demo</p>
+<p>Complete following instructions to ensure that this guide is configured correctly for your OpenShift cluster.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Type the below command on you <strong>oc cli</strong> to get the OpenShift ingress domain value and copy it:</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get ingresses.config/cluster -o jsonpath={.spec.domain}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Enter in the text box provided in the instructions page and hit enter</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/input-ingress-value.png" alt="input-ingress-value">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scenario_1_managing_and_visualizing_the_microservices"><a class="anchor" href="#_scenario_1_managing_and_visualizing_the_microservices"></a><a class="link" href="#_scenario_1_managing_and_visualizing_the_microservices">3.5. Scenario 1 - Managing and Visualizing the microservices</a></h3>
+<div class="paragraph">
+<p>Our Ansible script has already deployed the travelz application and configured Service Mesh to managed them. In the below steps we shall learn how ServiceMesh services, increase observability and tracing across these services.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Login to the <a href="https://console-openshift-console.%CLUSTER_WILDCARD_URL%">Open Shift Console</a> as admin user and navigate to the "istio-system" project in the developer view</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Istio-project.png" alt="istio-project-navigation">
+</div>
+</div>
+</li>
+<li>
+<p>Use your OpenShift credentials to login to <a href="https://kiali-istio-system.%CLUSTER_WILDCARD_URL%">Kiali</a></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/kiali-login.png" alt="kiali-login">
+</div>
+</div>
+</li>
+<li>
+<p>On the Kiali UI, navigate to graph menu.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/kiali-graph-nav.png" alt="kiali-graph-nav">
+</div>
+</div>
+</li>
+<li>
+<p>The graph provides a powerful set of features to visualize the traffic topology of the service mesh. Select all namespaces in the graph and enable Request Distribution and Traffic Animation in the Display Options:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/kiali-traffic-label.png" alt="kiali-traffic-label">
+</div>
+</div>
+</li>
+<li>
+<p>Visualize the traffic flowing through the services and the percentage of requests passing through each service.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/kiali-visualization.png" alt="kiali-visualization">
+</div>
+</div>
+<div class="paragraph">
+<p>This is all possible because of these services are a part of the service mesh</p>
+</div>
+</li>
+<li>
+<p>Trace each microservice call and interaction using the distributed tracing capability of OpenShift Service Mesh. Login into the <a href="https://jaeger-istio-system.apps.cluster-24vln.24vln.sandbox1725.opentlc.com/">Jaeger UI</a> with OpenShift credentials.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dist-tracing-nav.png" alt="dist-tracing-nav">
+</div>
+</div>
+</li>
+<li>
+<p>Select all the checkboxes and click on <strong>Allow selected permissions</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/jaeger-perm.png" alt="jaeger-perm">
+</div>
+</div>
+</li>
+<li>
+<p>Choose any service and click find traces to see a list of calls to the service.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/find-trace.png" alt="find-trace">
+</div>
+</div>
+</li>
+<li>
+<p>Click on any trace to find the details of each trace such as the spans, time taken to complete the request, services called etc.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/trace-list.png" alt="trace-list">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/trace-details.png" alt="trace-details">
+</div>
+</div>
+<div class="paragraph">
+<p>This is how ServiceMesh provides granular details about the interaction amongst services that are a part of it.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scenario_2_opening_api_access_to_external_partners"><a class="anchor" href="#_scenario_2_opening_api_access_to_external_partners"></a><a class="link" href="#_scenario_2_opening_api_access_to_external_partners">3.6. Scenario 2 - Opening API access to external partners</a></h3>
+<div class="paragraph">
+<p>A lot of partner companies approached Travelz and requested them to open up the access to their travel APIs so that they can build more value added services. Travelz saw this is a great business opportunity but at the same time wanted to do this in a sustainable and secure way</p>
+</div>
+<div class="paragraph">
+<p>Travelz wanted to build a new version (v2) for partners. They wanted all the partners calls to flow to v2 and the internal calls through v1. They decided to leverage the intelligent traffic routing capabilities of Service Mesh for this.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the admin user name shown on the <a href="https://console-openshift-console.%CLUSTER_WILDCARD_URL%">Openshift console</a> and click on the <strong>Copy Login Command</strong> option.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/copy-login.png" alt="copy-login">
+</div>
+</div>
+</li>
+<li>
+<p>Copy the login command and paste it on the terminal where OpenShift CLI is installed</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/login-command.png" alt="login-command">
+</div>
+</div>
+</li>
+<li>
+<p>Deploy v2 version of the travel microservice using the below command and wait for a couple of minutes</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc apply -n travel-agency -f <a href="https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travels-v2.yaml" class="bare">https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travels-v2.yaml</a></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Navigate to your <a href="https://kiali-istio-system.%CLUSTER_WILDCARD_URL%">Kiali</a> graph view and you&#8217;ll notice that the traffic from the internal portals(travels, viaggi and voyages) is being evenly split between v1 and v2. This happens because Service mesh by default splits the internal traffic between the different versions of the same service. v1 and v2 are the different versions of the travel service.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/v1-v2-split.png" alt="v1-v2-split">
+</div>
+</div>
+</li>
+<li>
+<p>However our goal is to utilize <strong>v2</strong> only for <strong>external</strong> and <strong>v1</strong> for <strong>internal</strong>. This can be achieved by ServiceMesh&#8217;s traffic routing capabilities.</p>
+</li>
+<li>
+<p>Create a virtual service that routes all the internal traffic to v1</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+A VirtualService defines a set of traffic routing rules to apply when a host is addressed. Each routing rule defines matching criteria for traffic of a specific protocol. If the traffic is matched, then it is sent to a named destination service (or subset/version of it) defined in the registry.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc apply -f <a href="https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travel-destination-rule.yaml" class="bare">https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travel-destination-rule.yaml</a>
+oc apply -f <a href="https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travel-virtual-service-internal.yaml" class="bare">https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travel-virtual-service-internal.yaml</a></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>In a couple of minutes your <a href="https://kiali-istio-system.%CLUSTER_WILDCARD_URL%">Kiali</a> graph should depict all the traffic flowing through v1.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/v1-traffic.png" alt="v1-traffic">
+</div>
+</div>
+</li>
+<li>
+<p>Enable API access to external and route all external traffic to v2.</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc apply -f <a href="https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travel-gateway.yaml" class="bare">https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travel-gateway.yaml</a>
+oc apply -f <a href="https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travel-virtual-service-external.yaml" class="bare">https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travel-virtual-service-external.yaml</a></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+On examining the external virtual service yaml available <a href="https://raw.githubusercontent.com/redhat-servicemesh-apim-demo/demos/main/travels/travel-virtual-service-external.yaml">here</a>, we can see in the last two lines how we route 100% of external calls coming for the istio ingress gateway(entry point for external traffic) to v2. You can always change the percentage between the versions based on your use case. For example think about deploying  a new version in <strong>Canary</strong> style where you gradually move the traffic from one older version to the newer version
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Check if the API is accessible externally by copy pasting the below link from your browser.</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-weblink hljs" data-lang="weblink"><a href="http://istio-ingressgateway-istio-system.%CLUSTER_WILDCARD_URL%/travels/Kiev" class="bare">http://istio-ingressgateway-istio-system.%CLUSTER_WILDCARD_URL%/travels/Kiev</a></code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/browser-api.png" alt="browser-api">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Kiev is the city for which we are getting the details of using this API.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you do not see the API response in the browser try replacing https with http
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Make around 20 calls to API by either refreshing your browser repeatedly or running the below <strong>curl</strong> command from your terminal.</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl <a href="http://istio-ingressgateway-istio-system.%CLUSTER_WILDCARD_URL%/travels/Kiev" class="bare">http://istio-ingressgateway-istio-system.%CLUSTER_WILDCARD_URL%/travels/Kiev</a>?[1-50]</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Navigate back to your graph on <a href="https://kiali-istio-system.%CLUSTER_WILDCARD_URL%">Kiali</a> UI and you&#8217;ll notice that the external traffic coming from the istio-ingress-gateway starts to flow through v2 in a few seconds</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/kiali-v2-traffic.png" alt="kiali-v2-traffic">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you do not see the traffic through v2 on the graph, you can refresh the graph on the Kiali UI
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/refresh-button.png" alt="refresh-button">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scenario_3_securing_api_access_north_south_or_external_traffic"><a class="anchor" href="#_scenario_3_securing_api_access_north_south_or_external_traffic"></a><a class="link" href="#_scenario_3_securing_api_access_north_south_or_external_traffic">3.7. Scenario 3 - Securing API access - North South or External traffic</a></h3>
+<div class="paragraph">
+<p>Now that we&#8217;ve opened up the API access externally and separated the traffic flow between internal and external consumers let&#8217;s see how we can secure the external access using <strong>3scale API Management</strong>.</p>
+</div>
+<div class="paragraph">
+<p>In this scenario let&#8217;s assume we have a partner application that wants to access the travel APIs and display the details on their own website. Let&#8217;s call this partner <strong>The Red Company</strong>. 3scale API management provides a secure way for organizations to share to secure their APIs externally with partners. The Apps send API request to the gateway URL provided by the <strong>Red Hat 3scale API Management</strong>. This in turn will validate the API user and redirect the call to the backend.  Authentication identifies the requester, and only allows access to the APIs for authenticated end-users. In our example the Red Company will be using an <strong>API Key</strong> generated by 3scale as a method of authentication to access the APIs.</p>
+</div>
+<div class="paragraph">
+<p>+
+image::apicast-architecture-image.png[apicast-architecture-image]</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to <a href="http://travels-red-ui-red-portal.%CLUSTER_WILDCARD_URL%">Red Company App</a> using this link.</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-weblink hljs" data-lang="weblink"><a href="http://travels-red-ui-red-portal.%CLUSTER_WILDCARD_URL%" class="bare">http://travels-red-ui-red-portal.%CLUSTER_WILDCARD_URL%</a></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Try to choose a city from the drop down to get the hotels, cars, flights information for that city. You will notice that the city drop down is not showing any values. Let&#8217;s investigate on what&#8217;s happening.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/empty-city-list.png" alt="empty-city-list">
+</div>
+</div>
+</li>
+<li>
+<p>Navigate to the deployment of the app on you <a href="https://console-openshift-console.%CLUSTER_WILDCARD_URL%">OpenShift Console</a> and click on the <strong>travels-demo-ui</strong> deployment</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/deployment-nav.png" alt="deployment-nav">
+</div>
+</div>
+</li>
+<li>
+<p>Click on the Environment tab and you&#8217;ll notice that the API_USER_KEY_VALUE is missing. This is the  env variable for API security and needs to be replaced. You can obtain this key from 3scale.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/secret_placeholder.png" alt="secret_placeholder">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+External Applications access the APIs via the inbuilt 3scale  gateway provided out of the box and managed by 3scale. The API_GET_CITIES and the API_GET_DETAILS_FOR_CITY are both environment variables used to the store the gateway URL behind which the actual API backends are protected. For the purpose of this guide they have already been populated but you can always get the gateway URL from your 3scale portal.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Log into 3scale using the below URL.</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-weblink hljs" data-lang="weblink"><a href="https://3scale-admin.%CLUSTER_WILDCARD_URL%" class="bare">https://3scale-admin.%CLUSTER_WILDCARD_URL%</a></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Login using the username: <code>admin</code> and obtain the password using the below command</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get secret -n 3scale system-seed -o json | jq -r .data.ADMIN_PASSWORD | base64 -d</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Once you login to the 3scale admin portal, close the on boarding wizard to land directly on the dashboard.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/onboarding-3scale.png" alt="onboarding-3scale">
+</div>
+</div>
+</li>
+<li>
+<p>Click on the <strong>Travel Demo Partner Product</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3scale-landing.png" alt="3scale-landing">
+</div>
+</div>
+</li>
+<li>
+<p><strong>Optional</strong>: Navigate to <strong>Integration &gt; Settings</strong>. Notice that we have selected <strong>3scale Managed APIcast</strong> as our gateway/reverse proxy to process the API requests. The Production public URL is the actual URL that partners and external consumers will use to consume the API. This is the value that is provided as an environment variables (API_GET_CITIES and the API_GET_DETAILS_FOR_CITY) in partner apps to access the APIs.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/apicast-gateway.png" alt="apicast-gateway">
+</div>
+</div>
+</li>
+<li>
+<p><strong>Optional</strong> : Navigate to <strong>Integration &gt; Backends</strong>. This is where we provide the base URLs of all the API backends that need to be protected by Red Hat 3scale.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backend-url.png" alt="backend-url">
+</div>
+</div>
+</li>
+<li>
+<p>Navigate to <strong>Applications &gt; Listing &gt; Select the Red App</strong> .</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/select-app.png" alt="select-app">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Red App is the name of the partner app that is registered on 3scale API management and has been allocated a key to access the API.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>THE <strong>API Key</strong> (which is <strong>redsecret</strong> in this case) is listed under the API Credential section, copy it</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/api-key-location.png" alt="api-key-location">
+</div>
+</div>
+</li>
+<li>
+<p>Go back to your <a href="https://console-openshift-console.%CLUSTER_WILDCARD_URL%">OpenShift Console</a> and replace the place holder text with the API Key as shown below and hit the save button. Wait for a minute before you proceed to the next step.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/add-secret.png" alt="add-secret">
+</div>
+</div>
+</li>
+<li>
+<p>Navigate again to <a href="http://travels-red-ui-red-portal.%CLUSTER_WILDCARD_URL%">Red Company App</a> using this link.</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-weblink hljs" data-lang="weblink"><a href="http://travels-red-ui-red-portal.%CLUSTER_WILDCARD_URL%" class="bare">http://travels-red-ui-red-portal.%CLUSTER_WILDCARD_URL%</a></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Since we&#8217;ve provided the API key, we should now be able to select a city from the dropdown and get details of the hotels, flights, cars etc that are relevant to that city.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/red-app-works.gif" alt="red-app-works">
+</div>
+</div>
+</li>
+<li>
+<p>Two other similar partner apps <a href="http://travels-green-ui-green-portal.%CLUSTER_WILDCARD_URL%">Green App</a> and <a href="http://travels-blue-ui-blue-portal.%CLUSTER_WILDCARD_URL%">Blue App</a> have already been deployed</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/green-app.png" alt="green-app">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/blue-app.png" alt="blue-app">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_monitor_and_analyze_the_external_api_calls"><a class="anchor" href="#_monitor_and_analyze_the_external_api_calls"></a><a class="link" href="#_monitor_and_analyze_the_external_api_calls">3.7.1. Monitor and analyze the external API calls</a></h4>
+<div class="paragraph">
+<p>*Leverage 3scale to monitor and analyze the external API calls from the different partners apps.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We shall now explore how we can leverage 3scale to monitor and analyze the API calls from the different partners apps.</p>
+</li>
+<li>
+<p>Simulate a bunch of API calls from mimicking the 3 different partner apps instead of manually refreshing the browser.</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">    for i in {1..25}
+     do
+       curl -v "https://traveldemo-istio-partner-product-3scale-apicast-production.%CLUSTER_WILDCARD_URL%/travels/Kiev?user_key=greensecret";
+       curl -v "https://traveldemo-istio-partner-product-3scale-apicast-production.%CLUSTER_WILDCARD_URL%/travels/Kiev?user_key=bluesecret";
+       curl -v "https://traveldemo-istio-partner-product-3scale-apicast-production.%CLUSTER_WILDCARD_URL%/travels/Kiev?user_key=redsecret";
+     done</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>From the <a href="https://3scale-admin.%CLUSTER_WILDCARD_URL%">3scale admin portal</a>, navigate to <strong>Travel Demo Partner Product &gt; Analytics &gt; Traffic</strong>. This page shows the number of call made to the travel details page by the partner apps here. Controlling the metrics, methods, and time range allows you to check different types of data.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/analytics-page.png" alt="analytics-page">
+</div>
+</div>
+</li>
+<li>
+<p>In case you see empty charts instead of graphs, try changing the date range to <strong>7 days</strong> and choose the <strong>Hits(hits)</strong> metric as shown below</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/analytics-error.png" alt="analytics-error">
+</div>
+</div>
+</li>
+<li>
+<p>To check these details for each individual app, navigate to <strong>Travel Demo Partner Product &gt; Applications &gt; Listing &gt; Red App</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/app-list.png" alt="app-list">
+</div>
+</div>
+</li>
+<li>
+<p>Click on analytics link above the application name. The usage charts are displayed for the application. Controlling the metrics, methods, and time range allows you to check different types of data about the application.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/app-analytics.png" alt="app-analytics">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/red-app-analytics-view.png" alt="red-app-analytics-view">
+</div>
+</div>
+</li>
+<li>
+<p>3scale also provides interactive documentation where external partners can learn about the API and try the API. Navigate to <strong>Travel Demo Partner Product &gt; ActiveDocs &gt; Travel Partner API Documentation</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/active-docs.png" alt="active-docs">
+</div>
+</div>
+</li>
+<li>
+<p>Check out the interactive API documentation page that is automatically imported along with the API.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/interactive-doc.png" alt="interactive-doc">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+3scale provides a developer portal out of the box where API consumers can signup for the API, access documentation, get their API keys, monitor their usage etc. To limit the time and scope of this exercise that part is not being explored as a part of this guide.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This section portrayed how APIs can be shared, secured, monitored when exposed externally using 3scale API Management. All the external applications are calling the 3scale Apicast gateway which acts as a reverse proxy and only redirects authenticated calls to the backend to get a response.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scenario_3_securing_internal_api_access_inter_domain_traffic"><a class="anchor" href="#_scenario_3_securing_internal_api_access_inter_domain_traffic"></a><a class="link" href="#_scenario_3_securing_internal_api_access_inter_domain_traffic">3.8. Scenario 3 - Securing Internal API access - Inter Domain Traffic</a></h3>
+<div class="paragraph">
+<p>More often than not huge enterprises have multiple business units or LOBs with varying goals and KPIs. In such scenarios when the internal LOBs want to share and reuse the APIs built by other LOBs, it is better to establish a formal relation to track the value that the APIs are provided internally. It is also important make sure the external LOBs are accessing our APIs securely and not abusing them.</p>
+</div>
+<div class="paragraph">
+<p>The travels-portal and travel-agency are two such LOBs that are part of the Travelz company. The travel-agency LOB is the provider of the API and travel-portal LOB is the consumer. We are going to leverage the native Red Hat 3scale and Service Mesh Integration here to establish the formal relationship. In this ServiceMesh serves as the dataplane and 3scale serves as the control plane which eliminates the need to have an additional gateway and reduces latency due to the reduced number of hops.</p>
+</div>
+<div class="paragraph">
+<p>The ServiceMeshExtension custom resource spec provides the configuration that the integration module reads from. The spec is embedded in the host and read by the module. Follow the below steps to configure the  ServiceMeshExtension. <strong>This will setup the API management control plane for us.</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Obtain the 'Admin Access Token'  by running this command. Note down the <strong>Admin_Access_Token</strong></p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get secret -n 3scale system-seed -o json | jq -r .data.ADMIN_ACCESS_TOKEN | base64 -d</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>The <strong>service token</strong> will enable the permission for service mesh to be able to access a particular 3scale product. From the 3scale admin-portal navigate to  <strong>Account Settings &gt; Personal &gt; Tokens</strong> and copy the Service Token of the <strong>Travel Demo Internal Product</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/service-token-ui.png" alt="service-token-ui">
+</div>
+</div>
+</li>
+<li>
+<p>Create a Custom Resource Definition file for the Service Mesh Extension with name <code>sme-internal.yaml</code> using vim or any other editor on your OC CLI terminal. Press <em>i</em> to go into the insert mode</p>
+</li>
+<li>
+<p>Copy paste the below yaml into the file and replace the <strong>access token</strong>, <strong>service token</strong> values as shown in the image below and save it. To save the file (if using vim), hit <strong>esc</strong> followed by <strong>:</strong> followed by <strong>wq</strong> followed by <strong>enter</strong> to save</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: maistra.io/v1
+kind: ServiceMeshExtension
+metadata:
+ name: travel-agency-internal
+ namespace: travel-agency
+spec:
+ image: 'registry.redhat.io/openshift-service-mesh/3scale-auth-wasm-rhel8:0.0.1'
+ phase: PostAuthZ
+ priority: 100
+ workloadSelector:
+   labels:
+     app: travels
+     version: v1
+ config:
+   api: v1
+   system:
+     name: system
+     token: replace with access token
+     upstream:
+       name: &gt;-
+         outbound|3000||system-provider.3scale.svc.cluster.local
+       timeout: 5000
+       url: 'http://system-provider.3scale.svc.cluster.local'
+   backend:
+     extensions:
+       - no_body
+     name: backend
+     upstream:
+       name: &gt;-
+         outbound|3000||backend-listener.3scale.svc.cluster.local
+       timeout: 5000
+       url: 'http://backend-listener.3scale.svc.cluster.local'
+   services:
+     - id: '3'
+       token: replace with service token
+       authorities:
+         - '*'
+       credentials:
+         app_id:
+           - header:
+               keys:
+                 - app_id
+           - query_string:
+               keys:
+                 - app_id
+         app_key:
+           - header:
+               keys:
+                 - app_key
+           - query_string:
+               keys:
+                 - app_key
+         user_key:
+           - query_string:
+               keys:
+                 - user_key
+           - header:
+               keys:
+                 - user_key
+       mapping_rules:
+         - method: GET
+           pattern: /
+           usages:
+             - delta: 1
+               name: hits</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/sme-internal.png" alt="sme-internal">
+</div>
+</div>
+</li>
+<li>
+<p>Apply the CRD to your cluster using the below command</p>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc apply -f sme-internal.yaml</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Wait for a couple of minutes and navigate back to your <a href="https://kiali-istio-system.%CLUSTER_WILDCARD_URL%">Kiali</a> console. You will notice that the traffic stops flowing  from the portals to the agency APIs as we just enabled authentication for them and none of the portals are sending in authenticated requests</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/kiali-red.png" alt="kiali-red">
+</div>
+</div>
+</li>
+<li>
+<p>Navigate to <a href="https://3scale-admin.%CLUSTER_WILDCARD_URL%">3scale admin portal</a> and click on the <strong>Travel Demo Internal Product</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3scale-landing-internal.png" alt="3scale-landing-internal">
+</div>
+</div>
+<div class="paragraph">
+<p>If you are logged out of 3scale for some reason, you can login using the username: <code>admin</code> and obtain the password using this command</p>
+</div>
+<div class="listingblock lines_7 console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get secret -n 3scale system-seed -o json | jq -r .data.ADMIN_PASSWORD | base64 -d</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Navigate to <em>Integration &gt; Settings</em>. Notice that we have selected <strong>Istio</strong> as our gateway/reverse proxy to process the Internal API requests. We are using the istio gateway directly instead of using the additional gateway provided by 3scale for internal requests but are leveraging 3scale for security.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/istio-gateway-3scale.png" alt="istio-gateway-3scale">
+</div>
+</div>
+</li>
+<li>
+<p>Navigate to <strong>Applications &gt; Listing &gt; Select the Viaggi App</strong> .</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3scale-viaggi.png" alt="3scale-viaggi">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Viaggi App is the name one of the internal apps that is registered on 3scale API management and has been allocated a key to access the API.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>THE <strong>API Key</strong> (which is <strong>viaggisecret</strong> in this case) is listed under the API Credential section, copy it</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/viaggi-secret.png" alt="viaggi-secret">
+</div>
+</div>
+</li>
+<li>
+<p>Navigate to the <a href="https://console-openshift-console.%CLUSTER_WILDCARD_URL%">OpenShift console UI</a> where the application is deployed. Administrator &gt; Workloads &gt; Deployments &gt; Click on viaggi</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/viaggi-deployment.png" alt="viaggi-deployment.png">
+</div>
+</div>
+</li>
+<li>
+<p>Click on the <strong>Environment</strong> tab and click on <strong>Add more</strong> in order to add two new environment variables that have the API secret related information as shown below. Click save and wait for a couple of minutes</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/viaggi-environment-vars.png" alt="viaggi-environment-vars">
+</div>
+</div>
+<div class="paragraph">
+<p><code>API_USER_KEY_NAME</code> : <code>user_key</code></p>
+</div>
+<div class="paragraph">
+<p><code>API_USER_KEY_VALUE</code>: <code>viaggisecret</code></p>
+</div>
+</li>
+<li>
+<p>Navigate to your <a href="https://kiali-istio-system.%CLUSTER_WILDCARD_URL%">Kiali</a> graph . You&#8217;ll notice that for the travel and voyages workloads on the graph there is no traffic <strong>red</strong> because they unauthenticated and for viaggi it&#8217;s <strong>green</strong> as we just provided the <strong>API Key</strong>. Double click on the viaggi workload</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/double-click-viaggi.png" alt="double-click-viaggi">
+</div>
+</div>
+</li>
+<li>
+<p>You should see the traffic is flowing only from viaggi and it&#8217;s graph is green.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/viaggi-green.png" alt="viaggi-green">
+</div>
+</div>
+</li>
+<li>
+<p>Repeat the same steps of adding the <code>API_USER_KEY_NAME and
+API_USER_KEY_VALUE</code> to the other two internal portals i.e. <strong>voyages</strong> and <strong>travels</strong> deployments and wait for a couple of minutes.</p>
+<div class="paragraph">
+<p>Values for travels portal:</p>
+</div>
+<div class="paragraph">
+<p><code>API_USER_KEY_NAME</code> : <code>user_key</code></p>
+</div>
+<div class="paragraph">
+<p><code>API_USER_KEY_VALUE</code>: <code>travelsecret</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/travels-environment-vars.png" alt="travels-environment-vars">
+</div>
+</div>
+<div class="paragraph">
+<p>Values for voyages portal</p>
+</div>
+<div class="paragraph">
+<p><code>API_USER_KEY_NAME</code> : <code>user_key</code></p>
+</div>
+<div class="paragraph">
+<p><code>API_USER_KEY_VALUE</code>: <code>voyagessecret</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/voyages-environment-vars.png" alt="voyages-environment-vars">
+</div>
+</div>
+</li>
+<li>
+<p>After a couple of minutes go back to your Kiali UI and click the back arrow that says <strong>back to full graph</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/back-nav.png" alt="back-nav">
+</div>
+</div>
+</li>
+<li>
+<p>Notice that all the traffic is now <strong>green</strong> indicating that the traffic is flowing seamlessly across the services. The graph should look exactly like how we started the exercise but the only difference being that all the traffic flowing from internal portals is authenticated and monitored via 3scale.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/kiali-graph-nav.png" alt="kiali-graph-nav">
+</div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>

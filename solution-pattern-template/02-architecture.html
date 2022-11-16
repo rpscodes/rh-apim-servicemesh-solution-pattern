@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Solution Pattern: Name Template :: Solution Patterns for Cloud Native Architectures</title>
     <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/02-architecture.html">
-    <link rel="prev" href="index.html#_content_overview">
+    <link rel="prev" href="01-pattern.html#_the_solution">
     <link rel="next" href="03-demo.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
@@ -73,13 +73,10 @@
     <a class="nav-link" href="01-pattern.html#_the_story_behind_this_solution_pattern">1.2 The story behind this solution pattern</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="01-pattern.html#_the_solution">1.3 The solution</a>
+    <a class="nav-link" href="index.html#_content_overview">1.3 Content Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#_content_overview">1.4 Content Overview</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index.html#_content_overview">1.5 Explore more solution patterns</a>
+    <a class="nav-link" href="01-pattern.html#_the_solution">1.4 The solution</a>
   </li>
 </ul>
   </li>
@@ -131,7 +128,7 @@
     <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <span class="nav-text">xref:04-workshop.adoc#_before_getting_started[4.2. Pre-requisites</span>
+    <a class="nav-link" href="04-workshop.html#_before_getting_started">4.2. Pre-requisites</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="04-workshop.html#install_wksp_details">4.3. Installing the environment</a>
@@ -180,7 +177,7 @@
     <li><a href="02-architecture.html">2. Architecture</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/jayachristina/apim-osm-sp/edit/main/documentation/modules/ROOT/pages/02-architecture.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/jayachristina/rh-apim-servicemesh-solution-pattern/edit/main/documentation/modules/ROOT/pages/02-architecture.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
@@ -188,13 +185,60 @@
 <h1 id="_architecture" class="sect0"><a class="anchor" href="#_architecture"></a><a class="link" href="#_architecture">Architecture</a></h1>
 <div class="openblock partintro">
 <div class="content">
-Introduction for the architecture of this solution pattern.
+<div class="paragraph">
+<p>The architecture will need to support these paradigms</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Control and monitor services-services traffic within the organization boundaries</p>
+</li>
+<li>
+<p>Support the ability to run microservices securely on zero-trust networks</p>
+</li>
+<li>
+<p>Distributed tracing to troubleshoot and isolate bottlenecks in end-to-end request paths</p>
+</li>
+<li>
+<p>Secure service-service communication from other internal teams such as other BUs or LOBs</p>
+</li>
+<li>
+<p>Secure access to services from external clients and partner portals</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_common_challenges"><a class="anchor" href="#_common_challenges"></a><a class="link" href="#_common_challenges">1. Common Challenges</a></h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>The new requirements include<br>
+(a) managing Intra Domain or East-West communication<br>
+(b) sharing APIs securely with external clients, there could a few challenges that can impact timely delivery.</p>
+</div>
+<div class="paragraph">
+<p>The team would like to adopt an approach which would enable</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ease of deployment, setup and maintenance of application infrastructure</p>
+</li>
+<li>
+<p>less or no impact to existing services so as to limit time, efforts and risk</p>
+</li>
+<li>
+<p>comprehensive application security</p>
+</li>
+<li>
+<p>monitoring usage with a possibility to monetize</p>
+</li>
+<li>
+<p>allow external clients to be able to sign up to the services through self-service</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -203,33 +247,13 @@ Introduction for the architecture of this solution pattern.
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">Red Hat OpenShift</a></p>
+<p><a href="https://developers.redhat.com/products/openshift/overview" target="_blank" rel="noopener">Red Hat OpenShift</a></p>
 </li>
 <li>
-<p>Red Hat Application Foundation</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://access.redhat.com/products/quarkus">Quarkus</a></p>
+<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/what-is-openshift-service-mesh" target="_blank" rel="noopener">Red Hat OpenShift Service Mesh</a></p>
 </li>
 <li>
-<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-streams-for-apache-kafka">Kafka Streams</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Other:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.postgresql.org/">PostgreSQL database</a></p>
-</li>
-<li>
-<p><a href="https://helm.sh/">Helm</a></p>
-</li>
-</ul>
-</div>
+<p><a href="https://developers.redhat.com/products/3scale/overview" target="_blank" rel="noopener">Red Hat 3scale API Management</a></p>
 </li>
 </ul>
 </div>
@@ -238,8 +262,28 @@ Introduction for the architecture of this solution pattern.
 <div class="sect1">
 <h2 id="in_depth"><a class="anchor" href="#in_depth"></a><a class="link" href="#in_depth">3. An in-depth look at the solution&#8217;s architecture</a></h2>
 <div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Internal systems speak with each other within private context - within a secure environment</p>
+</li>
+<li>
+<p>Not all microservices need to be exposed as APIs.</p>
+</li>
+<li>
+<p>External facing Composite services are composed of a collaborative set of atomic microservices. These external Composite services are the ones which will need to be exposed as an external API</p>
+</li>
+<li>
+<p>The atomic services are RESTful APIs in nature but will not have to be an API endpoint that needs to be exposed.  The interaction between the Atomic services and with the external facing Composite services is controlled by a Service Mesh.
+By doing this, the number of APIs that are actually exposed on the API gateway is limited. All the internal interactions are within a service and there is no need to go via the API gateway to invoke the atomic services</p>
+</li>
+<li>
+<p>The composite service which is exposed as an API endpoint on 3scale which is the entry to the serivce mesh which manages the RESTful atomic services in the southside of the gateway. The North side of this services  is defined in 3Scale as an API end point with an OpenAPI specification.  And that is how this enstire service is exposed to the external world.</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>Technical description including all or some of the following: architecture ir ed diagrams. In-depth details of the decisions made and solutions used. Description of each service and what it is used for. Description of any integration.</p>
+<p>These Composite service is typically simple in nature which would lean upon the atomic services to do the heavy lifting and then mash up the responses from those atomic services to provide the API endpoint. All of these services are defined by an OpenAPI Specification for a Contract First approach.</p>
 </div>
 </div>
 </div>
@@ -251,8 +295,38 @@ Introduction for the architecture of this solution pattern.
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_red_hat_openshift_service_mesh"><a class="anchor" href="#_red_hat_openshift_service_mesh"></a><a class="link" href="#_red_hat_openshift_service_mesh">5. Red Hat OpenShift Service Mesh</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>connect services securely by default with transparent TLS encryption</p>
+</li>
+<li>
+<p>enforce a "zero trust" or "need to know" with fine-grained traffic policies based on application identities</p>
+</li>
+<li>
+<p>control traffic flow with effective traffic management, which makes the applications more resilient</p>
+</li>
+<li>
+<p>use service metrics to monitor application health, reliability, and performance</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The service mesh</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deploy_red_hat_api_management_and_openshift_service_mesh_together"><a class="anchor" href="#_deploy_red_hat_api_management_and_openshift_service_mesh_together"></a><a class="link" href="#_deploy_red_hat_api_management_and_openshift_service_mesh_together">6. Deploy Red Hat API Management and OpenShift Service Mesh  together</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="index.html#_content_overview" class="query-params-link">1.4 Content Overview</a></span>
+  <span class="prev"><a href="01-pattern.html#_the_solution" class="query-params-link">1.4 The solution</a></span>
   <span class="next"><a href="03-demo.html" class="query-params-link">3. See the Solution in Action</a></span>
 </nav>
 </article>
