@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Solution Patterns: A comprehensive service architecture API Management and Service Meh :: Solution Patterns for Cloud Native Architectures</title>
+    <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/comprehensive-service-architecture/index.html">
+    <link rel="next" href="02-architecture.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://redhat-solution-patterns.github.io/" target="_blank"><img
+          src="../_/img/logo.png" height="40px" alt="Cloud Native Architecture Solution Patterns"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-solution-patterns.github.io/solution-patterns">Solution Patterns for Cloud Native Architectures</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Solution Patterns</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://red.ht/enhance-with-cdc">Adopt Change Data Capture for <br/>stack modernization</a>
+            <a class="navbar-item" href="https://red.ht/enhance-with-eda">Enhancing Applications with Application Services</a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Other</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-gitops-patterns.io/">GitOps Solution Patterns</a>
+            <a class="navbar-item" href="https://hybrid-cloud-patterns.io/">Hybrid Cloud Solution Patterns</a>
+          </div>
+        </div>
+
+        <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/middleware">Red Hat Application Services</a>
+        <a class="navbar-item" target="_blank" href="https://developers.redhat.com/middleware">Learn more</a>
+
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="comprehensive-service-architecture" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html" class=" query-params-link">Comprehensive Service Architecture</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">1. Home page</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#use-cases">1.1 Use cases</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#_the_story_behind_this_solution_pattern">1.2 The story behind this solution pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#_the_solution">1.3 The solution</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-architecture.html">2. Architecture</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-architecture.html#_common_challenges">2.1. Common Challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-architecture.html#tech_stack">2.2. Technology stack</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-architecture.html#in_depth">2.3. An in-depth look at the solution&#8217;s architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="03-demo.html">3. See the Solution in Action</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-demo.html#_demonstration">3.1. Demonstration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="03-demo.html#_run_the_demonstration">3.2. Run this demonstration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="03-demo.html#_before_getting_started">3.3. Pre-requisites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="03-demo.html#_installing_the_demo">3.4. Installing the demo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="03-demo.html#_walkthrough_guide">3.5. Walkthrough guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-workshop.html">4. Workshop</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="04-workshop.html#_before_getting_started">4.2. Pre-requisites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="04-workshop.html#install_wksp_details">4.3. Installing the environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-workshop.html#deliver_wksp">4.4. Delivering the workshop</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="https://redhat-solution-patterns.github.io/">5. Other Red Hat Solution Patterns</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Comprehensive Service Architecture</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Comprehensive Service Architecture</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Comprehensive Service Architecture</a></li>
+    <li><a href="index.html">1. Home page</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/redhat-servicemesh-apim-demo/rh-apim-servicemesh-solution-pattern/edit/main/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Solution Patterns: A comprehensive service architecture API Management and Service Meh</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>API-centric and microservices-based IT architectures improve speed, agility, and efficiency. Consistent, effective management of these interfaces and services is critical for successful deployment and use. Most organizations look for either an API management or a service mesh solution to accomplish this. Determining which approaches and tools to use within your organization can be confusing. However these two technologies are actually complementary and can be used together to deliver a complete service management architecture.</p>
+</div>
+<div class="paragraph">
+<p>This solution pattern helps you understand and setup a comprehensive service management architecture using both solutions together.</p>
+</div>
+<h2 id="_content_overview" class="discrete">Content overview</h2>
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset1_a-href-1-solution-pattern-a"></a><a href="#">1. Solution Pattern</a></p>
+</li>
+<li>
+<p><a id="tabset1_a-href-02-architecture-html-class-xref-page-2-architecture-a"></a><a href="02-architecture.html" class="xref page">2. Architecture</a></p>
+</li>
+<li>
+<p><a id="tabset1_a-href-03-demo-html-class-xref-page-3-demonstration-a"></a><a href="03-demo.html" class="xref page">3. Demonstration</a></p>
+</li>
+<li>
+<p><a id="tabset1_a-href-04-workshop-html-class-xref-page-4-workshop-a"></a><a href="04-workshop.html" class="xref page">4. Workshop</a></p>
+</li>
+</ul>
+</div>
+<div class="content">
+<div class="tab-pane" aria-labelledby="tabset1_a-href-1-solution-pattern-a">
+<div class="paragraph">
+<p><a href="#use-cases">1. Use cases</a><br>
+<a href="01-pattern.html#_the_story_behind_this_solution_pattern" class="xref page">2. The story behind this solution pattern</a><br>
+<a href="01-pattern.html#_the_solution" class="xref page">3. The solution</a><br></p>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_a-href-02-architecture-html-class-xref-page-2-architecture-a">
+<div class="paragraph">
+<p><a href="02-architecture.html#_common_challenges" class="xref page">1. Common challenges</a><br>
+<a href="02-architecture.html#tech_stack" class="xref page">2. Technology stack</a><br>
+<a href="02-architecture.html#in_depth" class="xref page">3. An in-depth look at the solution&#8217;s architecture</a><br>
+<a href="02-architecture.html#more_tech" class="xref page">4. More about the technology stack</a></p>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_a-href-03-demo-html-class-xref-page-3-demonstration-a">
+<div class="paragraph">
+<p><a href="03-demo.html#_demonstration" class="xref page">1. Demonstration</a><br>
+<a href="03-demo.html#_walkthrough_guide" class="xref page">2. Walkthrough guide</a></p>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_a-href-04-workshop-html-class-xref-page-4-workshop-a">
+<div class="paragraph">
+<p><a href="04-workshop.html#_installing_the_workshop_environment" class="xref page">1. Installing the workshop environment</a><br>
+<a href="04-workshop.html#_delivering_the_workshop" class="xref page">2. Delivering the workshop</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="anchor" href="#use-cases"></a><a class="link" href="#use-cases">1. Use cases</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Common use cases that can be address with this architecture are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Drive application modernization by managing legacy applications and microservices. Service mesh provides service-service communication while API management provides secured access to other teams and external partners.</p>
+</li>
+<li>
+<p>Allow increased observability and tracing across the services, standardize the security across services so that dev teams can manage  microservices more easily</p>
+</li>
+<li>
+<p>Formalizing inter-service communication in large corporate networks with api contracts</p>
+</li>
+<li>
+<p>Provide access to external partners, clients and developers who want to build value added services on top of existing offering. Build a self sign up workflow o obtain credentials, add usage limits to the API based on the business contract and monitor the usage by the external clients.</p>
+</li>
+<li>
+<p>Enable secure access to apps outside the service mesh</p>
+</li>
+<li>
+<p>Intelligent traffic routing to the services and APIs based on the application accessing them</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. A quick refresher</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">API Management</th>
+<th class="tableblock halign-left valign-top">Service Mesh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(a) manages relationship between service (API) providers and service consumers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(a) delivers advanced traffic control, security, resilience and observability for cloud-native apps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(b) securely exposes  services to external clients or other Business Unit within the same enterprise (also called <em>North-South</em> or Inter Domain)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(b) enables the standardization across the service interactions  (also called <em>East-West</em> or Intra domain)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(c) ideal for teams that want to deliver services beyond their domain to other internal groups or external users.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(c) ideal for development teams that need to access services through network interfaces and protocols.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_story_behind_this_solution_pattern"><a class="anchor" href="#_the_story_behind_this_solution_pattern"></a><a class="link" href="#_the_story_behind_this_solution_pattern">2. The story behind this solution pattern</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Travelz is a fictitious travel booking company. The team has built their application using microservices architecture and and the portal runs on Red Hat OpenShift.</p>
+</div>
+<div class="paragraph">
+<p>The Travelz application has two business units responsible for different aspects of the travel booking system.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <em>travel-portal</em>  business unit is responsible for several travel shops, where users can search for and book flights, hotels, cars or insurance.</p>
+</li>
+<li>
+<p>The <em>travel-agency</em>  business unit host a set of services created to provide quotes for travel.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With the growing number of microservices, the team needed a way to manage, secure and control how the services talk to each other. Service Mesh is identified as great fit for this purpose</p>
+</div>
+<div class="paragraph">
+<p>As the company grew, they plan to share their APIs with other internal LOBs and external partners. The internal and external clients' applications would need to access data and booking related information from Travelz microservices in the form of APIs. The Engineering teams now needed to ensure that they give secure access to their APIs externally and also manage and monitor the usage of these APIs to make sure everything is in line with the business agreements put in place.</p>
+</div>
+<div class="paragraph">
+<p><em>Travelz</em> would like to allow for travel aggregators to be able display flights, hotels insurance cars details. They would like to track any calls from these external clients and partners so as to identify the traffic generated by those teams. This would allow <em>Travelz</em> to be able to reward the partners based on the traffic. They would also these external partners to be able to sign up for services by themselves</p>
+</div>
+<div class="sect2">
+<h3 id="_introducing_new_requirements"><a class="anchor" href="#_introducing_new_requirements"></a><a class="link" href="#_introducing_new_requirements">2.1. Introducing new requirements</a></h3>
+<div class="paragraph">
+<p>Below are the set of key requirements for the development teams to tackle:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Leverage Service Mesh for Intra Domain or East-West communication</p>
+</li>
+<li>
+<p>Ensure a secure and standardized communication across microservices</p>
+</li>
+<li>
+<p>Share APIs securely with other orgs or external partners and monitor them - Inter Domain or North-South</p>
+</li>
+<li>
+<p>Launch a new version of a service and move it to deployment in Canary style</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_technical_overview"><a class="anchor" href="#_technical_overview"></a><a class="link" href="#_technical_overview">3. Technical Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To connect, manage and observe the microservices,  and control traffic between service-to-service, Travelz decided to adopt Istio based service mesh.<br>
+With  Red Hat OpenShift Service Mesh, the team was able to provides the necessary service-to-service capabilities — traffic monitoring, access control, discovery, security, resiliency, metrics, and more — without requiring changes to the code of any of the app&#8217;s microservices.</p>
+</div>
+<div class="paragraph">
+<p>With the introduction of external clients, there is a need to allow access of these services by other partners, clients and even other BUs.
+Red Hat® 3scale API Management makes it easy to manage, share, publish, secure and monetize these services as APIs.</p>
+</div>
+<div class="paragraph">
+<p>The Red Hat 3scale Istio plugin can connect with Red Hat 3scale API management to authorize API requests and report use. This integration allows you to efficiently set up an API with a service mesh backend.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="next"><a href="02-architecture.html" class="query-params-link">2. Architecture</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img
+          src="../_/img/app-services-logo.png" height="40px" alt="Cloud Native Architecture Solution Patterns"  href="https://redhat.com" ></a>
+</footer><script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
