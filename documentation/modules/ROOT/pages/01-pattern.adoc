@@ -22,7 +22,7 @@ Below are the set of key requirements for the development teams to tackle:
 * Launch a new version of a service and move it to deployment in Canary style
 
 
-== The Solution
+== Technical Overview
 
 To connect, manage and observe the microservices,  and control traffic between service-to-service, Travelz decided to adopt Istio based service mesh. +
 With  Red Hat OpenShift Service Mesh, the team was able to provides the necessary service-to-service capabilities — traffic monitoring, access control, discovery, security, resiliency, metrics, and more — without requiring changes to the code of any of the app's microservices.

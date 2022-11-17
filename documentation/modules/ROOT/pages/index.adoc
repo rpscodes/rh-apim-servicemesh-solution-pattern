@@ -1,4 +1,4 @@
-= Solution Patterns: Template Name
+= Solution Patterns: A comprehensive service architecture API Management and Service Meh
 :page-layout: home
 :sectnums:
 :sectlinks:
@@ -17,24 +17,7 @@ include::content-overview.adoc[]
 == Use cases
 
 
-.A quick refresher
-[cols="1,1"]
-|===
-| API Management | Service Mesh
 
-| (a) manages relationship between service (API) providers and service consumers 
-
-(b) securely exposes  services to external clients or other Business Unit within the same enterprise (also called _North-South_ or Inter Domain)
-
-(c) ideal for teams that want to deliver services beyond their domain to other internal groups or external users.
-
-
-|  (a) delivers advanced traffic control, security, resilience and observability for cloud-native apps
-
-(b) enables the standardization across the service interactions  (also called _East-West_ or Intra domain)
-
-(c) ideal for development teams that need to access services through network interfaces and protocols.
-|===
 
 Common use cases that can be address with this architecture are:
 
@@ -44,5 +27,20 @@ Common use cases that can be address with this architecture are:
 * Provide access to external partners, clients and developers who want to build value added services on top of existing offering. Build a self sign up workflow o obtain credentials, add usage limits to the API based on the business contract and monitor the usage by the external clients.
 * Enable secure access to apps outside the service mesh
 * Intelligent traffic routing to the services and APIs based on the application accessing them
+
+.A quick refresher
+[cols="1,1"]
+|===
+| API Management | Service Mesh
+
+| (a) manages relationship between service (API) providers and service consumers  |  (a) delivers advanced traffic control, security, resilience and observability for cloud-native apps
+
+
+| (b) securely exposes  services to external clients or other Business Unit within the same enterprise (also called _North-South_ or Inter Domain) | (b) enables the standardization across the service interactions  (also called _East-West_ or Intra domain)
+
+
+| (c) ideal for teams that want to deliver services beyond their domain to other internal groups or external users. | (c) ideal for development teams that need to access services through network interfaces and protocols.
+
+|===
 
 include::01-pattern.adoc[]

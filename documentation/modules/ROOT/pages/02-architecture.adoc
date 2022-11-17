@@ -4,6 +4,7 @@
 :doctype: book
 
 = Architecture 
+Introduction for the architecture of this solution pattern.
 
 The architecture will need to support these paradigms
 
@@ -16,8 +17,12 @@ The architecture will need to support these paradigms
 
 == Common Challenges 
 
-The new requirements include +
-(a) managing Intra Domain or East-West communication +
+With the proliferation of microservices, managing how these services interact with each other is a challenge. A service mesh can help in easing some of this burden by standardizing and optimising how services work with each other.
+
+Some of these services are also exposed as an API endpoint to other systems which could be within the same organization or external partners. API Management makes it easy to manage these APIs, secure, control and monetize them.
+
+Travelz customer have the following new requirements include +
+(a) managing how their internal services speak with each other 
 (b) sharing APIs securely with external clients, there could a few challenges that can impact timely delivery.
 
 The team would like to adopt an approach which would enable
@@ -37,9 +42,86 @@ The team would like to adopt an approach which would enable
 * https://developers.redhat.com/products/3scale/overview[Red Hat 3scale API Management^]
 
 
+=== Red Hat OpenShift Service Mesh
+OpenShift Service Mesh helps to connect, manage, and observe microservices-based applications. It is based on open source projects Istio, Jaeger and Kiali to provide connectivity between application services and add capabilities like resiliency, security, observability, routing control, and insights
+
+*Key features*
+
+* connect services securely by default with transparent TLS encryption
+* enforce a "zero trust" or "need to know" with fine-grained traffic policies based on application identities
+* control traffic flow with effective traffic management, which makes the applications more resilient
+* use service metrics to monitor application health, reliability, and performance
+
+=== Red Hat 3scale API Management
+Red Hat 3scale API Management makes it easy to manage your APIs for internal or external users. 
+
+* onboarding new APIs is rapid and easy
+* a custom developer portal and interactive API documentation based on OpenAPI specis provide an easy ay for developers to sign for APIs
+* in built analytics, monetization
+* access Control and Security, and setup rate limits   + 
+
+https://developers.redhat.com/products/3scale/overview[Learn more >>^]
+
+=== Red Hat API Management and OpenShift Service Mesh - stronger together
+Most organizations can leverage both API Management and Service Mesh together to build a comprehensive service management architecture. 
+* API Management manages traffic which flows outside a domain or enterprise boundary
+* Service Mesh  manages traffic within  a domain or enterprise boundary
+
+The 3scale WebAssembly extension eases the integration of OpenShift Service Mesh and 3scale API Management, and it provides a standard way to inject 3scale API Management configurations into OpenShift Service Mesh for execution in a single data plane. This allows you to label a service running within the Red Hat OpenShift Service Mesh and integrate that service with the 3scale API Management solution. 
+
+
 [#in_depth]
 == An in-depth look at the solution's architecture
 
+Travelz is a local tourism company offering a host of services to their customer from their offices across their city. 
+Their customers would walk into their office  and work with an agent to  choose a holiday destination package complete with picking a hotel, car services, flights and insurances!
+
+image::architecture-step1.png[] 
+
+
+This demo takes you step by step how the architecture evolves with the business expansion of the company's needs.
+
+*Scenario 1 - Launch of Travelz’s Online: Managing and Visualizing the microservices*
+With the arrival of the Digital World, their loyal customers wanted to Travelz to provide them with the best of holidays wherever the customers are! Travelz had to now go GLOBAL!
+Travelz’s Online Channel business unit aims to launch online tourism services in a number of different countries across the globe under their various  brands! 
+
+image::architecture-step2.png[] 
+
+
+With the rapid expansion of of their technical footprint, Travelz IT team would like better control over their tech estate. 
+They would like to
+
+* Manage access of the core Travels services from the online channels. These things cost money!
+* Traffic management
+* Intuitive end-to-end observability
+* Monitor and Trace requests
+* Enforce a "zero trust" network security
+
+For this purpose, Travelz IT introduces a Service Mesh to connect, manage, and observe microservices-based applications.
+OpenShift Service Mesh is based on open source projects Istio, Jaeger and Kiali to provide connectivity between application services and add capabilities like resiliency, security, observability, routing control, and insights
+
+image::architecture-step2_1.png[] 
+
+*Scenario 2 - Engaging with Partners: Opening API access to external partners*
+Travelz tourism becomes super popular! And other travel portals want to partner with Travelz!
+Now the team has to extend their tech to
+* Allow secure access to internal services to external partners and clients as APIs
+* APIs should be easy to find, understand, integrate with and adopt
+
+So, Travelz introduces an API Management to manage access by the external partners. They adopts a *Contract First* approach by creating OpenAPI specifications for their existing and new services before onboarding external clients
+
+image::architecture-step3.png[] 
+
+*Scenario 3 - Engaging with Partners: Securing API access - North South or External traffic*
+
+* Travelz IT now manages Partner Access to their APIs in such a way that the partners can only access APIs which are protected by a user_key. 
+* The developer portal provides the right platform for partner developers to discover, learn, test and sign up for those services
+//developer portal screenshot
+
+*Scenario 4 - Streamlining internal access: Securing Internal API access - Inter Domain Traffic*
+Travelz IT goes one step further to standardize access of their core Agency Services for both Internal teams as well External partners
+
+image::architecture-step4.png[] 
 
 * Internal systems speak with each other within private context - within a secure environment
 * Not all microservices need to be exposed as APIs. 
@@ -49,23 +131,3 @@ By doing this, the number of APIs that are actually exposed on the API gateway i
 * The composite service which is exposed as an API endpoint on 3scale which is the entry to the serivce mesh which manages the RESTful atomic services in the southside of the gateway. The North side of this services  is defined in 3Scale as an API end point with an OpenAPI specification.  And that is how this enstire service is exposed to the external world. 
 
 These Composite service is typically simple in nature which would lean upon the atomic services to do the heavy lifting and then mash up the responses from those atomic services to provide the API endpoint. All of these services are defined by an OpenAPI Specification for a Contract First approach. 
-
-
-//image::2022-11-15T06-05%3A38-336Z.png[] 
-
-//image::2022-11-15T06-24%3A08-192Z.png[] 
-
-[#more_tech]
-== About the Technology Stack
-
-If you want to include more details about the tech stack you used, this is the place.
-
-== Red Hat OpenShift Service Mesh
-* connect services securely by default with transparent TLS encryption
-* enforce a "zero trust" or "need to know" with fine-grained traffic policies based on application identities
-* control traffic flow with effective traffic management, which makes the applications more resilient
-* use service metrics to monitor application health, reliability, and performance
-
-The service mesh  
-
-== Deploy Red Hat API Management and OpenShift Service Mesh  together

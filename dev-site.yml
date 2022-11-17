@@ -4,7 +4,7 @@ runtime:
 site:
   title: Solution Patterns for Cloud Native Architectures (Dev Mode)  
   url: http://localhost:3000/
-  start_page: solution-pattern-template::index.adoc
+  start_page: comprehensive-service-architecture::index.adoc
 
 content:
   sources:
@@ -13,7 +13,7 @@ content:
       start_path: documentation
 asciidoc:
   attributes:
-    title: API Management and Service Mesh (Dev Mode)
+    title: A comprehensive Service Architecture with API Management and Service Mesh (Dev Mode)
   extensions:
     - ./lib/remote-include-processor.js
     - ./lib/tab-block.js

@@ -1,5 +1,5 @@
-name: solution-pattern-template
-title: Template Tutorial
+name: comprehensive-service-architecture
+title: Comprehensive Service Architecture
 version: master
 nav:
   - modules/ROOT/nav.adoc
