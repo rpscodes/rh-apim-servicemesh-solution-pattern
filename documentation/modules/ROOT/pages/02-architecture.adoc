@@ -4,8 +4,6 @@
 :doctype: book
 
 = Architecture 
-Introduction for the architecture of this solution pattern.
-
 The architecture will need to support these paradigms
 
 * Control and monitor services-services traffic within the organization boundaries
@@ -17,10 +15,42 @@ The architecture will need to support these paradigms
 
 == Common Challenges 
 
-With the proliferation of microservices, managing how these services interact with each other is a challenge. A service mesh can help in easing some of this burden by standardizing and optimising how services work with each other.
+With the proliferation of microservices, managing how these services interact with each other is a challenge. A service mesh can help in easing some of this burden by standardizing and optimising how services work with each other. +
+A service mesh
 
-Some of these services are also exposed as an API endpoint to other systems which could be within the same organization or external partners. API Management makes it easy to manage these APIs, secure, control and monetize them.
+* creates a centralized point of control in an application
+* adds a transparent layer on existing distributed applications without requiring any changes to the application code
+* provides more complex operational functionality, including A/B testing, canary releases, access control, and end-to-end authentication.  
 
+image::02-arch-servicemesh-intro.png[width=300] 
+
+
+On the other hand, APIs are the language of digital business.  It's tough to find a company or organization these days that is not exposing APIs to users, customers, clients, and partners as part of their digital transformation.  Examples of capabilities required for traditional API programs include:
+
+* Scale to large numbers of APIs and request volume
+* End-to-end security with TLS
+* Flexible deployment and traffic routing features to support A/B, Blue/Green, Canary deployments 
+* Developer portal to engage and onboard API clients
+* Client authentication and authorization
+* Application-level policy control
+* Analytics
+
+API management is typically used in “north south” architectures where API clients live beyond trust and/or organizational boundaries.  API Management makes it easy to manage these APIs, secure, control and monetize them.
+
+
+image::02-arch-apim-nw.png[width=400]   
+
+At the same time, as customers move to Kube-native and microservices architectures, we begin to deal with communication between large numbers of independent APIs to form complete applications. In these “east west” service architectures, there is a need to combine  service mesh capabilities and API management capabilities. 
+Some of the reasons could be 
+
+* common services being built for use by the entire enterprise which needs more formal API Management based communication
+* Different LOBs accessing services with a formalised contract and billing services included
+* Need for Rate limiting, throttling, distributed tracing, mutual TLS
+
+image::02-arch-servicemesh-ew.png[width=300]  
+
+ 
+=== Solution Pattern intro
 Travelz customer have the following new requirements include +
 (a) managing how their internal services speak with each other 
 (b) sharing APIs securely with external clients, there could a few challenges that can impact timely delivery.
