@@ -182,9 +182,6 @@
 <div class="openblock partintro">
 <div class="content">
 <div class="paragraph">
-<p>Introduction for the architecture of this solution pattern.</p>
-</div>
-<div class="paragraph">
 <p>The architecture will need to support these paradigms</p>
 </div>
 <div class="ulist">
@@ -212,11 +209,87 @@
 <h2 id="_common_challenges"><a class="anchor" href="#_common_challenges"></a><a class="link" href="#_common_challenges">1. Common Challenges</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>With the proliferation of microservices, managing how these services interact with each other is a challenge. A service mesh can help in easing some of this burden by standardizing and optimising how services work with each other.</p>
+<p>With the proliferation of microservices, managing how these services interact with each other is a challenge. A service mesh can help in easing some of this burden by standardizing and optimising how services work with each other.<br>
+A service mesh</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>creates a centralized point of control in an application</p>
+</li>
+<li>
+<p>adds a transparent layer on existing distributed applications without requiring any changes to the application code</p>
+</li>
+<li>
+<p>provides more complex operational functionality, including A/B testing, canary releases, access control, and end-to-end authentication.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/02-arch-servicemesh-intro.png" alt="02 arch servicemesh intro" width="300">
+</div>
 </div>
 <div class="paragraph">
-<p>Some of these services are also exposed as an API endpoint to other systems which could be within the same organization or external partners. API Management makes it easy to manage these APIs, secure, control and monetize them.</p>
+<p>On the other hand, APIs are the language of digital business.  It&#8217;s tough to find a company or organization these days that is not exposing APIs to users, customers, clients, and partners as part of their digital transformation.  Examples of capabilities required for traditional API programs include:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Scale to large numbers of APIs and request volume</p>
+</li>
+<li>
+<p>End-to-end security with TLS</p>
+</li>
+<li>
+<p>Flexible deployment and traffic routing features to support A/B, Blue/Green, Canary deployments</p>
+</li>
+<li>
+<p>Developer portal to engage and onboard API clients</p>
+</li>
+<li>
+<p>Client authentication and authorization</p>
+</li>
+<li>
+<p>Application-level policy control</p>
+</li>
+<li>
+<p>Analytics</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>API management is typically used in “north south” architectures where API clients live beyond trust and/or organizational boundaries.  API Management makes it easy to manage these APIs, secure, control and monetize them.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/02-arch-apim-nw.png" alt="02 arch apim nw" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>At the same time, as customers move to Kube-native and microservices architectures, we begin to deal with communication between large numbers of independent APIs to form complete applications. In these “east west” service architectures, there is a need to combine  service mesh capabilities and API management capabilities.
+Some of the reasons could be</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>common services being built for use by the entire enterprise which needs more formal API Management based communication</p>
+</li>
+<li>
+<p>Different LOBs accessing services with a formalised contract and billing services included</p>
+</li>
+<li>
+<p>Need for Rate limiting, throttling, distributed tracing, mutual TLS</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/02-arch-servicemesh-ew.png" alt="02 arch servicemesh ew" width="300">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_solution_pattern_intro"><a class="anchor" href="#_solution_pattern_intro"></a><a class="link" href="#_solution_pattern_intro">1.1. Solution Pattern intro</a></h3>
 <div class="paragraph">
 <p>Travelz customer have the following new requirements include<br>
 (a) managing how their internal services speak with each other
@@ -243,6 +316,7 @@
 <p>allow external clients to be able to sign up to the services through self-service</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>
