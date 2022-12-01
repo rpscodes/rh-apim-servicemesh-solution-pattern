@@ -116,29 +116,12 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-workshop.html">4. Workshop</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#_before_getting_started">4.2. Pre-requisites</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#install_wksp_details">4.3. Installing the environment</a>
-  </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-workshop.html#deliver_wksp">4.4. Delivering the workshop</a>
-  </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="https://redhat-solution-patterns.github.io/">5. Other Red Hat Solution Patterns</a>
+    <a class="nav-link" href="https://redhat-solution-patterns.github.io/">4. Other Red Hat Solution Patterns</a>
   </li>
 </ul>
   </li>
@@ -222,12 +205,17 @@ A service mesh</p>
 </li>
 <li>
 <p>provides more complex operational functionality, including A/B testing, canary releases, access control, and end-to-end authentication.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Service meshes manage the east-west type of network communications. East-west traffic indicates a traffic flow inside a data center, Kubernetes cluster, or a distributed system.</pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/02-arch-servicemesh-intro.png" alt="02 arch servicemesh intro" width="300">
+<img src="_images/02-arch-servicemesh-ew.png" alt="02 arch servicemesh ew" width="300">
 </div>
 </div>
 <div class="paragraph">
@@ -285,37 +273,7 @@ Some of the reasons could be</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/02-arch-servicemesh-ew.png" alt="02 arch servicemesh ew" width="300">
-</div>
-</div>
-<div class="sect2">
-<h3 id="_solution_pattern_intro"><a class="anchor" href="#_solution_pattern_intro"></a><a class="link" href="#_solution_pattern_intro">1.1. Solution Pattern intro</a></h3>
-<div class="paragraph">
-<p>Travelz customer have the following new requirements include<br>
-(a) managing how their internal services speak with each other
-(b) sharing APIs securely with external clients, there could a few challenges that can impact timely delivery.</p>
-</div>
-<div class="paragraph">
-<p>The team would like to adopt an approach which would enable</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>ease of deployment, setup and maintenance of application infrastructure</p>
-</li>
-<li>
-<p>less or no impact to existing services so as to limit time, efforts and risk</p>
-</li>
-<li>
-<p>comprehensive application security</p>
-</li>
-<li>
-<p>monitoring usage with a possibility to monetize</p>
-</li>
-<li>
-<p>allow external clients to be able to sign up to the services through self-service</p>
-</li>
-</ul>
+<img src="_images/02-arch-servicemesh-apim.png" alt="02 arch servicemesh apim" width="300">
 </div>
 </div>
 </div>
@@ -387,11 +345,19 @@ Some of the reasons could be</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_red_hat_api_management_and_openshift_service_mesh_stronger_together"><a class="anchor" href="#_red_hat_api_management_and_openshift_service_mesh_stronger_together"></a><a class="link" href="#_red_hat_api_management_and_openshift_service_mesh_stronger_together">2.3. Red Hat API Management and OpenShift Service Mesh - stronger together</a></h3>
+<h3 id="_red_hat_api_management_and_openshift_service_mesh_better_together"><a class="anchor" href="#_red_hat_api_management_and_openshift_service_mesh_better_together"></a><a class="link" href="#_red_hat_api_management_and_openshift_service_mesh_better_together">2.3. Red Hat API Management and OpenShift Service Mesh - better together</a></h3>
 <div class="paragraph">
-<p>Most organizations can leverage both API Management and Service Mesh together to build a comprehensive service management architecture.
-* API Management manages traffic which flows outside a domain or enterprise boundary
-* Service Mesh  manages traffic within  a domain or enterprise boundary</p>
+<p>Most organizations can leverage both API Management and Service Mesh together to build a comprehensive service management architecture.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>API Management manages traffic which flows outside a domain or enterprise boundary</p>
+</li>
+<li>
+<p>Service Mesh  manages traffic within  a domain or enterprise boundary</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>The 3scale WebAssembly extension eases the integration of OpenShift Service Mesh and 3scale API Management, and it provides a standard way to inject 3scale API Management configurations into OpenShift Service Mesh for execution in a single data plane. This allows you to label a service running within the Red Hat OpenShift Service Mesh and integrate that service with the 3scale API Management solution.</p>
@@ -406,6 +372,33 @@ Some of the reasons could be</p>
 <p>Travelz is a local tourism company offering a host of services to their customer from their offices across their city.
 Their customers would walk into their office  and work with an agent to  choose a holiday destination package complete with picking a hotel, car services, flights and insurances!</p>
 </div>
+<div class="paragraph">
+<p>Travelz customer have the following new requirements include<br>
+(a) managing how their internal services speak with each other
+(b) sharing APIs securely with external clients, there could a few challenges that can impact timely delivery.</p>
+</div>
+<div class="paragraph">
+<p>The team would like to adopt an approach which would enable</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ease of deployment, setup and maintenance of application infrastructure</p>
+</li>
+<li>
+<p>less or no impact to existing services so as to limit time, efforts and risk</p>
+</li>
+<li>
+<p>comprehensive application security</p>
+</li>
+<li>
+<p>monitoring usage with a possibility to monetize</p>
+</li>
+<li>
+<p>allow external clients to be able to sign up to the services through self-service</p>
+</li>
+</ul>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/architecture-step1.png" alt="architecture step1">
@@ -414,9 +407,10 @@ Their customers would walk into their office  and work with an agent to  choose 
 <div class="paragraph">
 <p>This demo takes you step by step how the architecture evolves with the business expansion of the company&#8217;s needs.</p>
 </div>
+<div class="sect2">
+<h3 id="_scenario_1_launch_of_travelzs_online_managing_and_visualizing_the_microservices"><a class="anchor" href="#_scenario_1_launch_of_travelzs_online_managing_and_visualizing_the_microservices"></a><a class="link" href="#_scenario_1_launch_of_travelzs_online_managing_and_visualizing_the_microservices">3.1. <strong>Scenario 1 - Launch of Travelz’s Online: Managing and Visualizing the microservices</strong></a></h3>
 <div class="paragraph">
-<p><strong>Scenario 1 - Launch of Travelz’s Online: Managing and Visualizing the microservices</strong>
-With the arrival of the Digital World, their loyal customers wanted to Travelz to provide them with the best of holidays wherever the customers are! Travelz had to now go GLOBAL!
+<p>With the arrival of the Digital World, their loyal customers wanted to Travelz to provide them with the best of holidays wherever the customers are! Travelz had to now go GLOBAL!
 Travelz’s Online Channel business unit aims to launch online tourism services in a number of different countries across the globe under their various  brands!</p>
 </div>
 <div class="imageblock">
@@ -456,9 +450,11 @@ OpenShift Service Mesh is based on open source projects Istio, Jaeger and Kiali 
 <img src="_images/architecture-step2_1.png" alt="architecture step2 1">
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_scenario_2_engaging_with_partners_opening_api_access_to_external_partners"><a class="anchor" href="#_scenario_2_engaging_with_partners_opening_api_access_to_external_partners"></a><a class="link" href="#_scenario_2_engaging_with_partners_opening_api_access_to_external_partners">3.2. <strong>Scenario 2 - Engaging with Partners: Opening API access to external partners</strong></a></h3>
 <div class="paragraph">
-<p><strong>Scenario 2 - Engaging with Partners: Opening API access to external partners</strong>
-Travelz tourism becomes super popular! And other travel portals want to partner with Travelz!
+<p>Travelz tourism becomes super popular! And other travel portals want to partner with Travelz!
 Now the team has to extend their tech to
 * Allow secure access to internal services to external partners and clients as APIs
 * APIs should be easy to find, understand, integrate with and adopt</p>
@@ -471,9 +467,9 @@ Now the team has to extend their tech to
 <img src="_images/architecture-step3.png" alt="architecture step3">
 </div>
 </div>
-<div class="paragraph">
-<p><strong>Scenario 3 - Engaging with Partners: Securing API access - North South or External traffic</strong></p>
 </div>
+<div class="sect2">
+<h3 id="_scenario_3_engaging_with_partners_securing_api_access_north_south_or_external_traffic"><a class="anchor" href="#_scenario_3_engaging_with_partners_securing_api_access_north_south_or_external_traffic"></a><a class="link" href="#_scenario_3_engaging_with_partners_securing_api_access_north_south_or_external_traffic">3.3. <strong>Scenario 3 - Engaging with Partners: Securing API access - North South or External traffic</strong></a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -484,37 +480,24 @@ Now the team has to extend their tech to
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><strong>Scenario 4 - Streamlining internal access: Securing Internal API access - Inter Domain Traffic</strong>
-Travelz IT goes one step further to standardize access of their core Agency Services for both Internal teams as well External partners</p>
-</div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/architecture-step4.png" alt="architecture step4">
+<img src="_images/architecture-step3.png" alt="Scenario 3 - Engaging with Partners: Securing API access - North South or External traffic">
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Internal systems speak with each other within private context - within a secure environment</p>
-</li>
-<li>
-<p>Not all microservices need to be exposed as APIs.</p>
-</li>
-<li>
-<p>External facing Composite services are composed of a collaborative set of atomic microservices. These external Composite services are the ones which will need to be exposed as an external API</p>
-</li>
-<li>
-<p>The atomic services are RESTful APIs in nature but will not have to be an API endpoint that needs to be exposed.  The interaction between the Atomic services and with the external facing Composite services is controlled by a Service Mesh.
-By doing this, the number of APIs that are actually exposed on the API gateway is limited. All the internal interactions are within a service and there is no need to go via the API gateway to invoke the atomic services</p>
-</li>
-<li>
-<p>The composite service which is exposed as an API endpoint on 3scale which is the entry to the serivce mesh which manages the RESTful atomic services in the southside of the gateway. The North side of this services  is defined in 3Scale as an API end point with an OpenAPI specification.  And that is how this enstire service is exposed to the external world.</p>
-</li>
-</ul>
+</div>
+<div class="sect2">
+<h3 id="_scenario_4_streamlining_internal_access_securing_internal_api_access_inter_domain_traffic"><a class="anchor" href="#_scenario_4_streamlining_internal_access_securing_internal_api_access_inter_domain_traffic"></a><a class="link" href="#_scenario_4_streamlining_internal_access_securing_internal_api_access_inter_domain_traffic">3.4. <strong>Scenario 4 - Streamlining internal access: Securing Internal API access - Inter Domain Traffic</strong></a></h3>
+<div class="paragraph">
+<p>Travelz IT goes one step further to standardize access of their core Agency Services for both Internal teams as well External partners</p>
 </div>
 <div class="paragraph">
-<p>These Composite service is typically simple in nature which would lean upon the atomic services to do the heavy lifting and then mash up the responses from those atomic services to provide the API endpoint. All of these services are defined by an OpenAPI Specification for a Contract First approach.</p>
+<p>TBC:
+The WASM plugin makes it easy to &#8230;&#8203;.. &#8230;&#8203; &#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/architecture-step4.png" alt="architecture step4"></span></p>
+</div>
 </div>
 </div>
 </div>

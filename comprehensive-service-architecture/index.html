@@ -115,29 +115,12 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-workshop.html">4. Workshop</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="04-workshop.html#_installing_the_workshop_environment">4.1. Installing the workshop environment</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#_before_getting_started">4.2. Pre-requisites</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="04-workshop.html#install_wksp_details">4.3. Installing the environment</a>
-  </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-workshop.html#deliver_wksp">4.4. Delivering the workshop</a>
-  </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="https://redhat-solution-patterns.github.io/">5. Other Red Hat Solution Patterns</a>
+    <a class="nav-link" href="https://redhat-solution-patterns.github.io/">4. Other Red Hat Solution Patterns</a>
   </li>
 </ul>
   </li>
@@ -180,10 +163,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>API-centric and microservices-based IT architectures improve speed, agility, and efficiency. Consistent, effective management of these interfaces and services is critical for successful deployment and use. Most organizations look for either an API management or a service mesh solution to accomplish this. Determining which approaches and tools to use within your organization can be confusing. However these two technologies are actually complementary and can be used together to deliver a complete service management architecture.</p>
+<p>API-centric and microservices-based IT architectures improve speed, agility, and efficiency. Consistent and effective management of these interfaces and services is critical for successful deployment and use. Most organizations look for either an API management or a service mesh solution to accomplish this. Determining which approaches and tools to use within your organization can be confusing. However these two technologies are actually complementary and can be used together to deliver a complete service management architecture.</p>
 </div>
 <div class="paragraph">
-<p>This solution pattern helps you understand and setup a comprehensive service management architecture using both solutions together.</p>
+<p>This solution pattern helps you understand how to use these solutions together to setup a comprehensive service management architecture.</p>
 </div>
 <h2 id="_content_overview" class="discrete">Content overview</h2>
 <div class="tabset is-loading">
@@ -239,27 +222,36 @@
 <h2 id="use-cases"><a class="anchor" href="#use-cases"></a><a class="link" href="#use-cases">1. Use cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Common use cases that can be address with this architecture are:</p>
+<p>App modernization resulting in cloud-native technologies need a way to manage their services. Service mesh provides well defined management of service-service communication.</p>
+</div>
+<div class="paragraph">
+<p>Organizations are implementing strategies to manage their APIs so they can respond to rapid changes in customer demands.  An API management solution allows  secure access to their services and APIs, so that the internal teams and external partners and clients can access these APIs in structured way.</p>
+</div>
+<div class="paragraph">
+<p>As you can see, organizations have a need for both of these technologies.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat OpenShift Service Mesh and Red Hat 3scale API  Management make it easy for these solutions to work with each other to help organizations build a comprehensive services archiecture</p>
+</div>
+<div class="paragraph">
+<p>Some of the benefits are</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Drive application modernization by managing legacy applications and microservices. Service mesh provides service-service communication while API management provides secured access to other teams and external partners.</p>
+<p>increased observability and tracing across the services, standardize the security across services so that dev teams can manage  microservices more easily</p>
 </li>
 <li>
-<p>Allow increased observability and tracing across the services, standardize the security across services so that dev teams can manage  microservices more easily</p>
+<p>formalizing inter-service communication in large corporate networks with api contracts</p>
 </li>
 <li>
-<p>Formalizing inter-service communication in large corporate networks with api contracts</p>
+<p>provide access to external partners, clients and developers who want to build value added services on top of existing offering. Build a self sign up workflow o obtain credentials, add usage limits to the API based on the business contract and monitor the usage by the external clients.</p>
 </li>
 <li>
-<p>Provide access to external partners, clients and developers who want to build value added services on top of existing offering. Build a self sign up workflow o obtain credentials, add usage limits to the API based on the business contract and monitor the usage by the external clients.</p>
+<p>enable secure access to apps outside the service mesh</p>
 </li>
 <li>
-<p>Enable secure access to apps outside the service mesh</p>
-</li>
-<li>
-<p>Intelligent traffic routing to the services and APIs based on the application accessing them</p>
+<p>intelligent traffic routing to the services and APIs based on the application accessing them</p>
 </li>
 </ul>
 </div>
