@@ -136,6 +136,7 @@ OpenShift Service Mesh is based on open source projects Istio, Jaeger and Kiali 
 
 image::architecture-step2_1.png[] 
 
+
 === *Scenario 2 - Engaging with Partners: Opening API access to external partners*
 Travelz tourism becomes super popular! And other travel portals want to partner with Travelz!
 Now the team has to extend their tech to
@@ -145,6 +146,8 @@ Now the team has to extend their tech to
 
 So, Travelz introduces an API Management to manage access by the external partners. They adopts a *Contract First* approach by creating OpenAPI specifications for their existing and new services before onboarding external clients
 
+Travelz build a new version of their Travels service (v2) for partners. So, the Partners will access  v2 and while the internal platforms access v1. The intelligent traffic routing capabilities of Service  make this extremely easy to do this.
+
 image::architecture-step3.png[] 
 
 === *Scenario 3 - Engaging with Partners: Securing API access - North South or External traffic*
@@ -153,26 +156,27 @@ image::architecture-step3.png[]
 * The developer portal provides the right platform for partner developers to discover, learn, test and sign up for those services.
 
 
-//TBC
-* WebAssembly (sometimes called Wasm) is a binary instruction format for stack-based virtual machines (VMs). This plugin is deployed as a sidecar to the microservices and it communicates directly with the 3scale API Manager, making it easy to secure and manage the existing services without making any changes to them.
-
 //developer portal screenshot
 
-image::architecture-step3.png[alt='Scenario 4'] 
+=== *Scenario 4 - Managing and Securing both External & Internal access - Inter Domain Traffic*
+Travelz IT goes one step further to standardize access of their core Agency Services for both Internal platforms as well External partners.
 
-=== *Scenario 4 - Streamlining internal access: Securing Internal API access - Inter Domain Traffic*
-Travelz IT goes one step further to standardize access of their core Agency Services for both Internal teams as well External partners
+This is made easy with the use of WebAssembly. WebAssembly (sometimes called Wasm) is a binary instruction format for stack-based virtual machines (VMs). This plugin is deployed as a sidecar to the microservices and it communicates directly with the 3scale API Manager, making it easy to secure and manage the existing services without making any changes to them.
 
+https://developers.redhat.com/articles/2021/11/18/design-authorization-cache-envoy-proxy-using-webassembly#what_is_envoy_proxy_[Click here^]  to learn more about the Wasm plugin. 
 
-
-image:architecture-step4.png[]
+image:architecture-step4.png[alt='Scenario 4'] 
 
 
 === *Conclusion*
 
-* All the components are integrated to to work well together without having to integrate by yourselves
-* The entire setup can be managed via gitops enabling easy setup on the various envirounment from dev to production
-* 
+3scale API Management and OpenShift Service Mesh deliver the right capabilities for the right traffic at the right time - for both internal and external clients. 
+It allows
+*  standardise and secure connectivity with no changes to existing services. 
+* Easy onboarding of partners
+* Monitoring, observability
+* All the components are integrated to  work well together without having to integrate them by yourself
+* The entire setup can be managed via gitops enabling easy setup across the various envirounment from dev to production
 
 
 
