@@ -470,6 +470,9 @@ Now the team has to extend their tech to</p>
 <div class="paragraph">
 <p>So, Travelz introduces an API Management to manage access by the external partners. They adopts a <strong>Contract First</strong> approach by creating OpenAPI specifications for their existing and new services before onboarding external clients</p>
 </div>
+<div class="paragraph">
+<p>Travelz build a new version of their Travels service (v2) for partners. So, the Partners will access  v2 and while the internal platforms access v1. The intelligent traffic routing capabilities of Service  make this extremely easy to do this.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/architecture-step3.png" alt="architecture step3">
@@ -488,40 +491,32 @@ Now the team has to extend their tech to</p>
 </li>
 </ul>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>WebAssembly (sometimes called Wasm) is a binary instruction format for stack-based virtual machines (VMs). This plugin is deployed as a sidecar to the microservices and it communicates directly with the 3scale API Manager, making it easy to secure and manage the existing services without making any changes to them.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/architecture-step3.png" alt="Scenario 4">
-</div>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_scenario_4_streamlining_internal_access_securing_internal_api_access_inter_domain_traffic"><a class="anchor" href="#_scenario_4_streamlining_internal_access_securing_internal_api_access_inter_domain_traffic"></a><a class="link" href="#_scenario_4_streamlining_internal_access_securing_internal_api_access_inter_domain_traffic">3.4. <strong>Scenario 4 - Streamlining internal access: Securing Internal API access - Inter Domain Traffic</strong></a></h3>
+<h3 id="_scenario_4_managing_and_securing_both_external_internal_access_inter_domain_traffic"><a class="anchor" href="#_scenario_4_managing_and_securing_both_external_internal_access_inter_domain_traffic"></a><a class="link" href="#_scenario_4_managing_and_securing_both_external_internal_access_inter_domain_traffic">3.4. <strong>Scenario 4 - Managing and Securing both External &amp; Internal access - Inter Domain Traffic</strong></a></h3>
 <div class="paragraph">
-<p>Travelz IT goes one step further to standardize access of their core Agency Services for both Internal teams as well External partners</p>
+<p>Travelz IT goes one step further to standardize access of their core Agency Services for both Internal platforms as well External partners.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="_images/architecture-step4.png" alt="architecture step4"></span></p>
+<p>This is made easy with the use of WebAssembly. WebAssembly (sometimes called Wasm) is a binary instruction format for stack-based virtual machines (VMs). This plugin is deployed as a sidecar to the microservices and it communicates directly with the 3scale API Manager, making it easy to secure and manage the existing services without making any changes to them.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://developers.redhat.com/articles/2021/11/18/design-authorization-cache-envoy-proxy-using-webassembly#what_is_envoy_proxy_" target="_blank" rel="noopener">Click here</a>  to learn more about the Wasm plugin.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/architecture-step4.png" alt="Scenario 4"></span></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_conclusion"><a class="anchor" href="#_conclusion"></a><a class="link" href="#_conclusion">3.5. <strong>Conclusion</strong></a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>All the components are integrated to to work well together without having to integrate by yourselves</p>
-</li>
-<li>
-<p>The entire setup can be managed via gitops enabling easy setup on the various envirounment from dev to production
-*</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>3scale API Management and OpenShift Service Mesh deliver the right capabilities for the right traffic at the right time - for both internal and external clients.
+It allows
+*  standardise and secure connectivity with no changes to existing services.
+* Easy onboarding of partners
+* Monitoring, observability
+* All the components are integrated to  work well together without having to integrate them by yourself
+* The entire setup can be managed via gitops enabling easy setup across the various envirounment from dev to production</p>
 </div>
 </div>
 </div>
