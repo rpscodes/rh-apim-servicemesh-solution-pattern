@@ -139,6 +139,7 @@ image::architecture-step2_1.png[]
 === *Scenario 2 - Engaging with Partners: Opening API access to external partners*
 Travelz tourism becomes super popular! And other travel portals want to partner with Travelz!
 Now the team has to extend their tech to
+
 * Allow secure access to internal services to external partners and clients as APIs
 * APIs should be easy to find, understand, integrate with and adopt
 
@@ -149,18 +150,31 @@ image::architecture-step3.png[]
 === *Scenario 3 - Engaging with Partners: Securing API access - North South or External traffic*
 
 * Travelz IT now manages Partner Access to their APIs in such a way that the partners can only access APIs which are protected by a user_key. 
-* The developer portal provides the right platform for partner developers to discover, learn, test and sign up for those services
+* The developer portal provides the right platform for partner developers to discover, learn, test and sign up for those services.
+
+
+//TBC
+* WebAssembly (sometimes called Wasm) is a binary instruction format for stack-based virtual machines (VMs). This plugin is deployed as a sidecar to the microservices and it communicates directly with the 3scale API Manager, making it easy to secure and manage the existing services without making any changes to them.
+
 //developer portal screenshot
 
-image::architecture-step3.png[alt='Scenario 3 - Engaging with Partners: Securing API access - North South or External traffic'] 
+image::architecture-step3.png[alt='Scenario 4'] 
 
 === *Scenario 4 - Streamlining internal access: Securing Internal API access - Inter Domain Traffic*
 Travelz IT goes one step further to standardize access of their core Agency Services for both Internal teams as well External partners
 
-TBC:
-The WASM plugin makes it easy to ..... ... ... 
+
 
 image:architecture-step4.png[]
+
+
+=== *Conclusion*
+
+* All the components are integrated to to work well together without having to integrate by yourselves
+* The entire setup can be managed via gitops enabling easy setup on the various envirounment from dev to production
+* 
+
+
 
 //* Internal systems speak with each other within private context - within a secure environment
 //* Not all microservices need to be exposed as APIs. 
