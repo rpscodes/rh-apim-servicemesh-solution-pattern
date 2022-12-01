@@ -22,7 +22,10 @@ A service mesh
 * adds a transparent layer on existing distributed applications without requiring any changes to the application code
 * provides more complex operational functionality, including A/B testing, canary releases, access control, and end-to-end authentication.  
 
-image::02-arch-servicemesh-intro.png[width=300] 
+ Service meshes manage the east-west type of network communications. East-west traffic indicates a traffic flow inside a data center, Kubernetes cluster, or a distributed system.
+
+image::02-arch-servicemesh-ew.png[width=300]  
+
 
 
 On the other hand, APIs are the language of digital business.  It's tough to find a company or organization these days that is not exposing APIs to users, customers, clients, and partners as part of their digital transformation.  Examples of capabilities required for traditional API programs include:
@@ -47,21 +50,8 @@ Some of the reasons could be
 * Different LOBs accessing services with a formalised contract and billing services included
 * Need for Rate limiting, throttling, distributed tracing, mutual TLS
 
-image::02-arch-servicemesh-ew.png[width=300]  
+image::02-arch-servicemesh-apim.png[width=300]  
 
- 
-=== Solution Pattern intro
-Travelz customer have the following new requirements include +
-(a) managing how their internal services speak with each other 
-(b) sharing APIs securely with external clients, there could a few challenges that can impact timely delivery.
-
-The team would like to adopt an approach which would enable
-
-* ease of deployment, setup and maintenance of application infrastructure
-* less or no impact to existing services so as to limit time, efforts and risk
-* comprehensive application security 
-* monitoring usage with a possibility to monetize
-* allow external clients to be able to sign up to the services through self-service
 
 
 [#tech_stack]
@@ -92,8 +82,9 @@ Red Hat 3scale API Management makes it easy to manage your APIs for internal or 
 
 https://developers.redhat.com/products/3scale/overview[Learn more >>^]
 
-=== Red Hat API Management and OpenShift Service Mesh - stronger together
+=== Red Hat API Management and OpenShift Service Mesh - better together
 Most organizations can leverage both API Management and Service Mesh together to build a comprehensive service management architecture. 
+
 * API Management manages traffic which flows outside a domain or enterprise boundary
 * Service Mesh  manages traffic within  a domain or enterprise boundary
 
@@ -106,12 +97,25 @@ The 3scale WebAssembly extension eases the integration of OpenShift Service Mesh
 Travelz is a local tourism company offering a host of services to their customer from their offices across their city. 
 Their customers would walk into their office  and work with an agent to  choose a holiday destination package complete with picking a hotel, car services, flights and insurances!
 
+Travelz customer have the following new requirements include +
+(a) managing how their internal services speak with each other 
+(b) sharing APIs securely with external clients, there could a few challenges that can impact timely delivery.
+
+The team would like to adopt an approach which would enable
+
+* ease of deployment, setup and maintenance of application infrastructure
+* less or no impact to existing services so as to limit time, efforts and risk
+* comprehensive application security 
+* monitoring usage with a possibility to monetize
+* allow external clients to be able to sign up to the services through self-service
+
 image::architecture-step1.png[] 
 
 
 This demo takes you step by step how the architecture evolves with the business expansion of the company's needs.
 
-*Scenario 1 - Launch of Travelz’s Online: Managing and Visualizing the microservices*
+=== *Scenario 1 - Launch of Travelz’s Online: Managing and Visualizing the microservices*
+
 With the arrival of the Digital World, their loyal customers wanted to Travelz to provide them with the best of holidays wherever the customers are! Travelz had to now go GLOBAL!
 Travelz’s Online Channel business unit aims to launch online tourism services in a number of different countries across the globe under their various  brands! 
 
@@ -132,7 +136,7 @@ OpenShift Service Mesh is based on open source projects Istio, Jaeger and Kiali 
 
 image::architecture-step2_1.png[] 
 
-*Scenario 2 - Engaging with Partners: Opening API access to external partners*
+=== *Scenario 2 - Engaging with Partners: Opening API access to external partners*
 Travelz tourism becomes super popular! And other travel portals want to partner with Travelz!
 Now the team has to extend their tech to
 * Allow secure access to internal services to external partners and clients as APIs
@@ -142,22 +146,27 @@ So, Travelz introduces an API Management to manage access by the external partne
 
 image::architecture-step3.png[] 
 
-*Scenario 3 - Engaging with Partners: Securing API access - North South or External traffic*
+=== *Scenario 3 - Engaging with Partners: Securing API access - North South or External traffic*
 
 * Travelz IT now manages Partner Access to their APIs in such a way that the partners can only access APIs which are protected by a user_key. 
 * The developer portal provides the right platform for partner developers to discover, learn, test and sign up for those services
 //developer portal screenshot
 
-*Scenario 4 - Streamlining internal access: Securing Internal API access - Inter Domain Traffic*
+image::architecture-step3.png[alt='Scenario 3 - Engaging with Partners: Securing API access - North South or External traffic'] 
+
+=== *Scenario 4 - Streamlining internal access: Securing Internal API access - Inter Domain Traffic*
 Travelz IT goes one step further to standardize access of their core Agency Services for both Internal teams as well External partners
 
-image::architecture-step4.png[] 
+TBC:
+The WASM plugin makes it easy to ..... ... ... 
 
-* Internal systems speak with each other within private context - within a secure environment
-* Not all microservices need to be exposed as APIs. 
-* External facing Composite services are composed of a collaborative set of atomic microservices. These external Composite services are the ones which will need to be exposed as an external API
-* The atomic services are RESTful APIs in nature but will not have to be an API endpoint that needs to be exposed.  The interaction between the Atomic services and with the external facing Composite services is controlled by a Service Mesh.
-By doing this, the number of APIs that are actually exposed on the API gateway is limited. All the internal interactions are within a service and there is no need to go via the API gateway to invoke the atomic services
-* The composite service which is exposed as an API endpoint on 3scale which is the entry to the serivce mesh which manages the RESTful atomic services in the southside of the gateway. The North side of this services  is defined in 3Scale as an API end point with an OpenAPI specification.  And that is how this enstire service is exposed to the external world. 
+image:architecture-step4.png[]
 
-These Composite service is typically simple in nature which would lean upon the atomic services to do the heavy lifting and then mash up the responses from those atomic services to provide the API endpoint. All of these services are defined by an OpenAPI Specification for a Contract First approach. 
+//* Internal systems speak with each other within private context - within a secure environment
+//* Not all microservices need to be exposed as APIs. 
+//* External facing Composite services are composed of a collaborative set of atomic microservices. These external Composite services are the ones which will need to be exposed as an external API
+//* The atomic services are RESTful APIs in nature but will not have to be an API endpoint that needs to be exposed.  The interaction between the Atomic services and with the external facing Composite services is controlled by a Service Mesh.
+//By doing this, the number of APIs that are actually exposed on the API gateway is limited. All the internal interactions are within a service and there is no need to go via the API gateway to invoke the atomic services
+//* The composite service which is exposed as an API endpoint on 3scale which is the entry to the serivce mesh which manages the RESTful atomic services in the southside of the gateway. The North side of this services  is defined in 3Scale as an API end point with an OpenAPI specification.  And that is how this enstire service is exposed to the external world. 
+
+//These Composite service is typically simple in nature which would lean upon the atomic services to do the heavy lifting and then mash up the responses from those atomic services to provide the API endpoint. All of these services are defined by an OpenAPI Specification for a Contract First approach. 
